@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>fried-chicken的blog</title>
+  
+  <subtitle>aka忻雨大爹</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://fried-chicken.top/"/>
+  <updated>2019-03-06T12:08:50.855Z</updated>
+  <id>http://fried-chicken.top/</id>
+  
+  <author>
+    <name>fried-chicken</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>炸鸡</title>
+    <link href="http://fried-chicken.top/2019/03/06/fried-chicken/"/>
+    <id>http://fried-chicken.top/2019/03/06/fried-chicken/</id>
+    <published>2019-03-06T11:51:55.000Z</published>
+    <updated>2019-03-06T12:08:50.855Z</updated>
+    
+    <content type="html"><![CDATA[<p>把隔壁小孩馋哭了</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;把隔壁小孩馋哭了&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
