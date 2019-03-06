@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://fried-chicken.top/"/>
-  <updated>2019-03-06T16:42:41.828Z</updated>
+  <updated>2019-03-06T17:04:46.792Z</updated>
   <id>http://fried-chicken.top/</id>
   
   <author>
@@ -17,31 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Frd</title>
-    <link href="http://fried-chicken.top/%5Bobject%20Object%5D/frd/"/>
-    <id>http://fried-chicken.top/[object Object]/frd/</id>
-    <published>2019-03-06T16:42:00.000Z</published>
-    <updated>2019-03-06T16:42:41.828Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-      <category term="others" scheme="http://fried-chicken.top/categories/others/"/>
-    
-      <category term="test" scheme="http://fried-chicken.top/categories/others/test/"/>
-    
-    
-      <category term="nothing" scheme="http://fried-chicken.top/tags/nothing/"/>
-    
-  </entry>
-  
-  <entry>
     <title>炸鸡</title>
     <link href="http://fried-chicken.top/%5Bobject%20Object%5D/fried-chicken/"/>
     <id>http://fried-chicken.top/[object Object]/fried-chicken/</id>
     <published>2019-03-06T11:51:55.000Z</published>
-    <updated>2019-03-06T16:38:14.604Z</updated>
+    <updated>2019-03-06T17:04:46.792Z</updated>
     
     <content type="html"><![CDATA[<p>把隔壁小孩馋哭了</p>]]></content>
     
@@ -56,6 +36,8 @@
     </summary>
     
       <category term="others" scheme="http://fried-chicken.top/categories/others/"/>
+    
+      <category term="test" scheme="http://fried-chicken.top/categories/others/test/"/>
     
     
   </entry>

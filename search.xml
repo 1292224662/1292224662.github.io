@@ -4,33 +4,6 @@
   
     
     <entry>
-      <title>Frd</title>
-      <link href="/%5Bobject%20Object%5D/frd/"/>
-      <url>/%5Bobject%20Object%5D/frd/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      <categories>
-          
-          <category> others </category>
-          
-          <category> test </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> nothing </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>炸鸡</title>
       <link href="/%5Bobject%20Object%5D/fried-chicken/"/>
       <url>/%5Bobject%20Object%5D/fried-chicken/</url>
@@ -41,6 +14,8 @@
       <categories>
           
           <category> others </category>
+          
+          <category> test </category>
           
       </categories>
       
