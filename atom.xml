@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>fried-chicken的blog</title>
   
-  <subtitle>aka忻雨大爹</subtitle>
+  <subtitle>蒟蒻的ACM笔记</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://fried-chicken.top/"/>
-  <updated>2019-03-07T02:40:05.832Z</updated>
+  <updated>2019-03-07T03:25:59.075Z</updated>
   <id>http://fried-chicken.top/</id>
   
   <author>
@@ -17,13 +17,24 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>About</title>
+    <title>����������͵Ķ�����</title>
     <link href="http://fried-chicken.top/%5Bobject%20Object%5D/about/"/>
     <id>http://fried-chicken.top/[object Object]/about/</id>
     <published>2019-03-07T02:40:05.000Z</published>
-    <updated>2019-03-07T02:40:05.832Z</updated>
+    <updated>2019-03-07T03:25:59.075Z</updated>
+    
+    <content type="html"><![CDATA[<p>##����fried-chicken</p><blockquote><ul><li>fried-chicken�Ǳ�(he)��(bei)������ѧ��18��ѧ��</li><li>fried-chicken������ѧУ��ACM-ICPC���ֲ�</li><li>fried-chicken��ĺܲˣ�������ͼд����¼�õ�blog</li><li>fried-chickenϲ����ը��</li><li>���Ծ������͵ĺ�������ϵ»��ĺ�����fried-chicken���ǻ�Կϵ»�</li><li>�ر���<strong>˱ָԭζ��</strong></li></ul></blockquote><p>##�������blog</p><blockquote><ul><li>�᲻���ڣ��桤�����ڣ������㷨������һЩ����ʼ�</li><li>��Ϊ�Һܲˣ��������blog������ĺܲ�����</li><li>�����������Ҫʲô����ʱû���ҵ������õ��ģ���������Ϊ�������ȷʵ������</li><li>Ҳ��ӭ��¹�ע�ҵ�<a href="https://www.zhihu.com/people/zha-zha-32-77/activities" target="_blank" rel="noopener">֪���˺�</a></li></ul></blockquote><p>##���ݵ���</p><blockquote><ul><li>���Ŷ࿪�ӵ�ԭ�򣬲������ȡ�ȿ��ӻ���ӵ�д��������������������δ��ɵ�����</li><li>�������ڷ��������ҵ�һЩ�������࣬��ÿ�������£�����һ�������ſ��Ľ��ܣ�����дд��Щ��Ŀ����<font color="red">AC</font>��֮���</li><li>�������Ŀ���ṩ�����������ܵͣ��Ĵ��룬���������ģ�<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"Hello , World!"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ul></blockquote><blockquote><ul><li>�ٴ�ǿ���������ˣ����ܻ�������˵���ĵط�����ӭ�����֪����˽������</li></ul></blockquote>]]></content>
     
     <summary type="html">
+    
+      
+      
+        &lt;p&gt;##����fried-chicken&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;fried-chicken�Ǳ�(he)��(bei)������ѧ��18��ѧ��&lt;/li&gt;
+&lt;li&gt;fried-chicken������ѧУ��ACM-ICPC���ֲ�&lt;/
+      
     
     </summary>
     

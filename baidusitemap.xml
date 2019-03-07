@@ -1,18 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  
   <url>
     <loc>http://fried-chicken.top/%5Bobject%20Object%5D/about/</loc>
-    
-    <lastmod>2019-03-07T03:25:59.075Z</lastmod>
-    
-  </url>
-  
-  <url>
+    <lastmod>2019-03-07</lastmod>
+  </url>  <url>
     <loc>http://fried-chicken.top/%5Bobject%20Object%5D/fried-chicken/</loc>
-    
-    <lastmod>2019-03-06T17:04:46.792Z</lastmod>
-    
+    <lastmod>2019-03-06</lastmod>
   </url>
-  
 </urlset>
