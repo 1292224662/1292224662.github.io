@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://fried-chicken.top/"/>
-  <updated>2019-03-06T17:04:46.792Z</updated>
+  <updated>2019-03-07T02:40:05.832Z</updated>
   <id>http://fried-chicken.top/</id>
   
   <author>
@@ -15,6 +15,20 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>About</title>
+    <link href="http://fried-chicken.top/%5Bobject%20Object%5D/about/"/>
+    <id>http://fried-chicken.top/[object Object]/about/</id>
+    <published>2019-03-07T02:40:05.000Z</published>
+    <updated>2019-03-07T02:40:05.832Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>炸鸡</title>
