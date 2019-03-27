@@ -255,177 +255,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://fried-chicken.top/[object Object]/2018zj-d/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="fried-chicken">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="fried-chicken的blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/[object Object]/2018zj-d/" itemprop="url">C：命令行与文件系统</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-28T01:04:28+08:00">
-                2019-03-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/2018寒假算法总结赛/" itemprop="url" rel="index">
-                    <span itemprop="name">2018寒假算法总结赛</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/2018寒假算法总结赛/D-关灯/" itemprop="url" rel="index">
-                    <span itemprop="name">D:关灯</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/[object Object]/2018zj-d/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="[object Object]/2018zj-d/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><strong> 赛时状态：<font color="green">AC</font>(+) at 1:05; </strong></p>
-<p>#题目：<br><img src="/[object Object]/2018zj-d/1.png" alt="1"><br><img src="/[object Object]/2018zj-d/2.png" alt="2"><br><img src="/[object Object]/2018zj-d/3.png" alt="3"></p>
-<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p><strong> 关灯的核心就是枚举第一行！ </strong><br>这题里样例数T的范围在2e5一下，首先我们注意到每个位置碰两次等价于没碰，所以每个位置的状态只有碰一次或没碰。<br>所以，对每一个样例，我们一共有2的16次方种操作。但显然T再乘个2的十六次方会疯狂超时。<br>这里，就需要了解一下关等问题的套路了：枚举第一行！<br>原理是这样的，对于第一行的操作，一共只有2的4次方种，即16种，而操作完第一行之后，为了确保第一行的等关掉（划重点！），第二行的操作是唯一确定的（例如第一行第二个为开，则第二行第二个必须操作一次关掉第一行第二个）。<br>这也就是说，只要我们把第一行的操作定下来了之后，之后的12个格子的操作就都是确定的了，即每一行都优先灭掉上面一行，根据这个，我们只需要16T的运算就可以解决问题。</p>
-<p>但是，其实这也不是最好的做法（但这次可以过，因为数据比较水orz）；</p>
-<p>最快的正确做法是！打表！<br>没错，每个棋盘状态唯一对应一个二进制数，我们只需要另写一个程序预处理好所有状况的可能，在询问时直接查询问状态所对应的二进制数的事先预处理的值就可以了。</p>
-<p>当然，我写的就是第一种方法，水过去了，打表懒得补了ORZ。</p>
-<h3 id="程序："><a href="#程序：" class="headerlink" title="程序："></a>程序：</h3><p><code>`</code>c++</p>
-<p>#include&lt;bits/stdc++.h&gt;<br>using namespace std;<br>int T;<br>char mp[10][10];<br>char mpsave[10][10];<br>bool inmap(int x,int y){<br>    if(x&lt;=0||x&gt;=5||y&lt;=0||y&gt;=5)<br>        return false;<br>    return true;<br>}<br>void change (int x,int y){<br>    if( inmap(x,y) )<br>        mp[x][y]=81-mp[x][y];<br>    return ;<br>}<br>void push(int x,int y){<br>    change(x,y);<br>    change(x,y+1);<br>    change(x,y-1);<br>    change(x+1,y);<br>    change(x-1,y);<br>    return ;<br>}</p>
-<p>int main(){<br>    cin&gt;&gt;T;<br>    while(T–){<br>        scanf(“%s%s%s%s”,&amp;mp[1][1],&amp;mp[2][1],&amp;mp[3][1],&amp;mp[4][1]);<br>        for(int i=1;i&lt;=4;i++)<br>            for(int j=1;j&lt;=4;j++)<br>                mpsave[i][j]=mp[i][j];<br>        int ans=1000;<br>        for(int q=0;q&lt;=1;q++)<br>            for(int w=0;w&lt;=1;w++)<br>                for(int e=0;e&lt;=1;e++)<br>                    for(int r=0;r&lt;=1;r++){<br>                        for(int i=1;i&lt;=4;i++)<br>                            for(int j=1;j&lt;=4;j++)<br>                                mp[i][j]=mpsave[i][j];<br>                        int anssave=0;<br>                        if(q){<br>                            push(1,1);<br>                            anssave++;<br>                        }<br>                        if(w){<br>                            push(1,2);<br>                            anssave++;<br>                        }<br>                        if(e){<br>                            push(1,3);<br>                            anssave++;<br>                        }<br>                        if(r){<br>                            push(1,4);<br>                            anssave++;<br>                        }<br>                        for(int x=2;x&lt;=4;x++)<br>                            for(int y=1;y&lt;=4;y++){<br>                                if(mp[x-1][y]==’#’){<br>                                    push(x,y);<br>                                    anssave++;<br>                                }<br>                            }<br>                        bool is_close=true;<br>                        for(int x=4;x&gt;=1;x–)<br>                            for(int y=4;y&gt;=1;y–){<br>                                if(mp[x][y]==’#’){<br>                                    is_close=false;<br>                                    break;<br>                                }<br>                            }<br>                        if(is_close&amp;&amp;ans&gt;anssave)<br>                            ans=anssave;<br>                    }<br>        printf(“%d\n”,ans==1000?-1:ans);<br>    }<br>    return 0;<br>}</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://fried-chicken.top/[object Object]/2018zj/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1229,7 +1058,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1240,7 +1069,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -1251,7 +1080,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
