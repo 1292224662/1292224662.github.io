@@ -81,21 +81,21 @@
 
 
 
-<meta name="description" content="赛时状态：AC(+) at 1:05;  题目： 题解 关灯的核心就是枚举第一行！ 这题里样例数T的范围在2e5一下，首先我们注意到每个位置碰两次等价于没碰，所以每个位置的状态只有碰一次或没碰。所以，对每一个样例，我们一共有2的16次方种操作。但显然T再乘个2的十六次方会疯狂超时。这里，就需要了解一下关等问题的套路了：枚举第一行！原理是这样的，对于第一行的操作，一共只有2的4次方种，即16种，而">
+<meta name="description" content="赛时状态：AC(+) at 1:05;  题目： 题解 关灯的核心就是枚举第一行！ 这题里样例数T的范围在2e5以下，首先我们注意到每个位置碰两次等价于没碰，所以每个位置的状态只有碰一次或没碰。所以，对每一个样例，我们一共有2的16次方种操作。但显然T再乘个2的十六次方会疯狂超时。这里，就需要了解一下关灯问题的套路了：枚举第一行！原理是这样的，对于第一行的操作，一共只有2的4次方种，即16种，而">
 <meta name="keywords" content="二进制,打表">
 <meta property="og:type" content="article">
 <meta property="og:title" content="D： 关灯">
 <meta property="og:url" content="http://fried-chicken.top/[object Object]/2018zj-d/index.html">
 <meta property="og:site_name" content="fried-chicken的blog">
-<meta property="og:description" content="赛时状态：AC(+) at 1:05;  题目： 题解 关灯的核心就是枚举第一行！ 这题里样例数T的范围在2e5一下，首先我们注意到每个位置碰两次等价于没碰，所以每个位置的状态只有碰一次或没碰。所以，对每一个样例，我们一共有2的16次方种操作。但显然T再乘个2的十六次方会疯狂超时。这里，就需要了解一下关等问题的套路了：枚举第一行！原理是这样的，对于第一行的操作，一共只有2的4次方种，即16种，而">
+<meta property="og:description" content="赛时状态：AC(+) at 1:05;  题目： 题解 关灯的核心就是枚举第一行！ 这题里样例数T的范围在2e5以下，首先我们注意到每个位置碰两次等价于没碰，所以每个位置的状态只有碰一次或没碰。所以，对每一个样例，我们一共有2的16次方种操作。但显然T再乘个2的十六次方会疯狂超时。这里，就需要了解一下关灯问题的套路了：枚举第一行！原理是这样的，对于第一行的操作，一共只有2的4次方种，即16种，而">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://fried-chicken.top/[object%20Object]/2018zj-d/1.png">
 <meta property="og:image" content="http://fried-chicken.top/[object%20Object]/2018zj-d/2.png">
 <meta property="og:image" content="http://fried-chicken.top/[object%20Object]/2018zj-d/3.png">
-<meta property="og:updated_time" content="2019-03-27T17:24:50.624Z">
+<meta property="og:updated_time" content="2019-03-27T17:28:07.456Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="D： 关灯">
-<meta name="twitter:description" content="赛时状态：AC(+) at 1:05;  题目： 题解 关灯的核心就是枚举第一行！ 这题里样例数T的范围在2e5一下，首先我们注意到每个位置碰两次等价于没碰，所以每个位置的状态只有碰一次或没碰。所以，对每一个样例，我们一共有2的16次方种操作。但显然T再乘个2的十六次方会疯狂超时。这里，就需要了解一下关等问题的套路了：枚举第一行！原理是这样的，对于第一行的操作，一共只有2的4次方种，即16种，而">
+<meta name="twitter:description" content="赛时状态：AC(+) at 1:05;  题目： 题解 关灯的核心就是枚举第一行！ 这题里样例数T的范围在2e5以下，首先我们注意到每个位置碰两次等价于没碰，所以每个位置的状态只有碰一次或没碰。所以，对每一个样例，我们一共有2的16次方种操作。但显然T再乘个2的十六次方会疯狂超时。这里，就需要了解一下关灯问题的套路了：枚举第一行！原理是这样的，对于第一行的操作，一共只有2的4次方种，即16种，而">
 <meta name="twitter:image" content="http://fried-chicken.top/[object%20Object]/2018zj-d/1.png">
 
 
@@ -371,7 +371,7 @@
       
         <p><strong> 赛时状态：<font color="green">AC</font>(+) at 1:05; </strong></p>
 <h1 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h1><p><img src="/[object Object]/2018zj-d/1.png" alt="1"><br><img src="/[object Object]/2018zj-d/2.png" alt="2"><br><img src="/[object Object]/2018zj-d/3.png" alt="3"></p>
-<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p><strong> 关灯的核心就是枚举第一行！ </strong><br>这题里样例数T的范围在2e5一下，首先我们注意到每个位置碰两次等价于没碰，所以每个位置的状态只有碰一次或没碰。<br>所以，对每一个样例，我们一共有2的16次方种操作。但显然T再乘个2的十六次方会疯狂超时。<br>这里，就需要了解一下关等问题的套路了：枚举第一行！<br>原理是这样的，对于第一行的操作，一共只有2的4次方种，即16种，而操作完第一行之后，为了确保第一行的等关掉（划重点！），第二行的操作是唯一确定的（例如第一行第二个为开，则第二行第二个必须操作一次关掉第一行第二个）。<br>这也就是说，只要我们把第一行的操作定下来了之后，之后的12个格子的操作就都是确定的了，即每一行都优先灭掉上面一行，根据这个，我们只需要16T的运算就可以解决问题。</p>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p><strong> 关灯的核心就是枚举第一行！ </strong><br>这题里样例数T的范围在2e5以下，首先我们注意到每个位置碰两次等价于没碰，所以每个位置的状态只有碰一次或没碰。<br>所以，对每一个样例，我们一共有2的16次方种操作。但显然T再乘个2的十六次方会疯狂超时。<br>这里，就需要了解一下关灯问题的套路了：枚举第一行！<br>原理是这样的，对于第一行的操作，一共只有2的4次方种，即16种，而操作完第一行之后，为了确保第一行的灯关掉（划重点！），第二行的操作是唯一确定的（例如第一行第二个为开，则第二行第二个必须操作一次关掉第一行第二个）。<br>这也就是说，只要我们把第一行的操作定下来了之后，之后的12个格子的操作就都是确定的了，即每一行都优先灭掉上面一行，根据这个，我们只需要16T的运算就可以解决问题。</p>
 <p>但是，其实这也不是最好的做法（但这次可以过，因为数据比较水orz）；</p>
 <p>最快的正确做法是！打表！<br>没错，每个棋盘状态唯一对应一个二进制数，我们只需要另写一个程序预处理好所有状况的可能，在询问时直接查询问状态所对应的二进制数的事先预处理的值就可以了。</p>
 <p>当然，我写的就是第一种方法，水过去了，打表懒得补了ORZ。</p>
@@ -419,6 +419,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/[object Object]/2018zj-e/" rel="prev" title="E：一起去划船">
+                E：一起去划船 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -507,7 +511,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -518,7 +522,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -529,7 +533,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
