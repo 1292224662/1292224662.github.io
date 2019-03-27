@@ -81,19 +81,19 @@
 
 
 
-<meta name="description" content="赛时状态：AC(+) at 0:19;  题目： 题解 贪心大法好！ 是一道久违的贪心题呢，不过真的好水啊orz。根据小学数学的经验，我们把小姐姐按照时间从小到大排序，然后再一个一个过就行了，不开心的不让划，开心的就开心的划去吧~~~啊对了，小心题目的数据范围，因为最大的中间变量会达到1e14，所以要用 long long 。 `c++ #include #include #includeusi">
+<meta name="description" content="赛时状态：AC(+) at 0:19;  题目： 题解 贪心大法好！ 是一道久违的贪心题呢，不过真的好水啊orz。根据小学数学的经验，我们把小姐姐按照时间从小到大排序，然后再一个一个过就行了，不开心的不让划，开心的就开心的划去吧~~~啊对了，小心题目的数据范围，因为最大的中间变量会达到1e14，所以要用 long long 。 1234567891011121314151617181920212">
 <meta name="keywords" content="水题,贪心">
 <meta property="og:type" content="article">
 <meta property="og:title" content="E：一起去划船">
 <meta property="og:url" content="http://fried-chicken.top/[object Object]/2018zj-e/index.html">
 <meta property="og:site_name" content="fried-chicken的blog">
-<meta property="og:description" content="赛时状态：AC(+) at 0:19;  题目： 题解 贪心大法好！ 是一道久违的贪心题呢，不过真的好水啊orz。根据小学数学的经验，我们把小姐姐按照时间从小到大排序，然后再一个一个过就行了，不开心的不让划，开心的就开心的划去吧~~~啊对了，小心题目的数据范围，因为最大的中间变量会达到1e14，所以要用 long long 。 `c++ #include #include #includeusi">
+<meta property="og:description" content="赛时状态：AC(+) at 0:19;  题目： 题解 贪心大法好！ 是一道久违的贪心题呢，不过真的好水啊orz。根据小学数学的经验，我们把小姐姐按照时间从小到大排序，然后再一个一个过就行了，不开心的不让划，开心的就开心的划去吧~~~啊对了，小心题目的数据范围，因为最大的中间变量会达到1e14，所以要用 long long 。 1234567891011121314151617181920212">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://fried-chicken.top/[object%20Object]/2018zj-e/1.png">
-<meta property="og:updated_time" content="2019-03-27T17:39:04.623Z">
+<meta property="og:updated_time" content="2019-03-27T17:40:59.261Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="E：一起去划船">
-<meta name="twitter:description" content="赛时状态：AC(+) at 0:19;  题目： 题解 贪心大法好！ 是一道久违的贪心题呢，不过真的好水啊orz。根据小学数学的经验，我们把小姐姐按照时间从小到大排序，然后再一个一个过就行了，不开心的不让划，开心的就开心的划去吧~~~啊对了，小心题目的数据范围，因为最大的中间变量会达到1e14，所以要用 long long 。 `c++ #include #include #includeusi">
+<meta name="twitter:description" content="赛时状态：AC(+) at 0:19;  题目： 题解 贪心大法好！ 是一道久违的贪心题呢，不过真的好水啊orz。根据小学数学的经验，我们把小姐姐按照时间从小到大排序，然后再一个一个过就行了，不开心的不让划，开心的就开心的划去吧~~~啊对了，小心题目的数据范围，因为最大的中间变量会达到1e14，所以要用 long long 。 1234567891011121314151617181920212">
 <meta name="twitter:image" content="http://fried-chicken.top/[object%20Object]/2018zj-e/1.png">
 
 
@@ -370,12 +370,7 @@
         <p><strong> 赛时状态：<font color="green">AC</font>(+) at 0:19; </strong></p>
 <h1 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h1><p><img src="/[object Object]/2018zj-e/1.png" alt="1"></p>
 <h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p><strong> 贪心大法好！ </strong><br>是一道久违的贪心题呢，不过真的好水啊orz。<br>根据小学数学的经验，我们把小姐姐按照时间从小到大排序，然后再一个一个过就行了，不开心的不让划，开心的就开心的划去吧~~~<br>啊对了，小心题目的数据范围，因为最大的中间变量会达到1e14，所以要用 long long 。</p>
-<p><code>`</code>c++</p>
-<p>#include<iostream></iostream></p>
-<p>#include<cstdio></cstdio></p>
-<p>#include<algorithm><br>using namespace std;</algorithm></p>
-<p>int T;<br>int n;<br>long long a[100010];<br>int main(){<br>    cin&gt;&gt;T;<br>    while(T–){<br>        cin&gt;&gt;n;<br>        for(int i=0;i&lt;n;i++)<br>            scanf(“%lld”,&amp;a[i]);<br>        sort(a,a+n);<br>        int ans=1;<br>        long long sum=a[0];<br>        for(int i=1;i&lt;n;i++){<br>            if(sum&lt;=a[i]){<br>                ans++;<br>                sum+=a[i];<br>            }<br>        }<br>        cout&lt;&lt;ans&lt;&lt;endl;<br>    }<br>    return 0;<br>} </p>
-
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> T;</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> a[<span class="number">100010</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;T;</span><br><span class="line">	<span class="keyword">while</span>(T--)&#123;</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">"%lld"</span>,&amp;a[i]);</span><br><span class="line">		sort(a,a+n);</span><br><span class="line">		<span class="keyword">int</span> ans=<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">long</span> <span class="keyword">long</span> sum=a[<span class="number">0</span>];</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;n;i++)&#123;</span><br><span class="line">			<span class="keyword">if</span>(sum&lt;=a[i])&#123; </span><br><span class="line">				ans++;</span><br><span class="line">				sum+=a[i];</span><br><span class="line">			&#125; </span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;ans&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
