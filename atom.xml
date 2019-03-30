@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://fried-chicken.top/"/>
-  <updated>2019-03-30T17:28:13.047Z</updated>
+  <updated>2019-03-30T17:47:21.557Z</updated>
   <id>http://fried-chicken.top/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>A： Ervin and Joker</title>
+    <link href="http://fried-chicken.top/%5Bobject%20Object%5D/rating2-1-a/"/>
+    <id>http://fried-chicken.top/[object Object]/rating2-1-a/</id>
+    <published>2019-03-30T17:47:56.000Z</published>
+    <updated>2019-03-30T17:47:21.557Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong> 赛时状态：<font color="green">AC</font>(+<font color="red">4</font>) at 0:42; </strong></p><h1 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h1><p><img src="/[object Object]/rating2-1-a/1.png" alt="1"></p><h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>一开始疯狂读错题，疯狂瞎猜，疯狂WA。</p><p>后来冷静下来，认真的左右互搏手玩了几把，发现规律了，即n=0（没错，n居然可以为0！）、k=1且n%2=1的两种情况显然是先手输，除此之外的情况，只要先手从中间拿1或2个，使得剩下的石子被分成均匀的两堆，那么之后，先手只需要重复后手的动作，便一定可以获胜。</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> n,k;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"><span class="built_in">cin</span>&gt;&gt;n&gt;&gt;k;</span><br><span class="line"><span class="keyword">if</span>(!n)&#123;</span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;<span class="string">"Joker"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span>(k==<span class="number">1</span>)&#123;</span><br><span class="line"><span class="keyword">if</span>(n%<span class="number">2</span>)</span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;<span class="string">"Ervin"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;<span class="string">"Joker"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;<span class="string">"Ervin"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;strong&gt; 赛时状态：&lt;font color=&quot;green&quot;&gt;AC&lt;/font&gt;(+&lt;font color=&quot;red&quot;&gt;4&lt;/font&gt;) at 0:42; &lt;/strong&gt;&lt;/p&gt;
+&lt;h1 id=&quot;题目：&quot;&gt;&lt;a href=&quot;#题目：&quot; class=&quot;header
+      
+    
+    </summary>
+    
+      <category term="大一下三月月赛" scheme="http://fried-chicken.top/categories/%E5%A4%A7%E4%B8%80%E4%B8%8B%E4%B8%89%E6%9C%88%E6%9C%88%E8%B5%9B/"/>
+    
+      <category term="A： Ervin and Joker" scheme="http://fried-chicken.top/categories/%E5%A4%A7%E4%B8%80%E4%B8%8B%E4%B8%89%E6%9C%88%E6%9C%88%E8%B5%9B/A%EF%BC%9A-Ervin-and-Joker/"/>
+    
+    
+      <category term="水题" scheme="http://fried-chicken.top/tags/%E6%B0%B4%E9%A2%98/"/>
+    
+      <category term="博弈" scheme="http://fried-chicken.top/tags/%E5%8D%9A%E5%BC%88/"/>
+    
+  </entry>
   
   <entry>
     <title>大一下三月月赛总结</title>
