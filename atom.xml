@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://fried-chicken.top/"/>
-  <updated>2019-03-30T17:23:06.072Z</updated>
+  <updated>2019-03-30T17:28:13.047Z</updated>
   <id>http://fried-chicken.top/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>总结</title>
+    <title>大一下三月月赛总结</title>
     <link href="http://fried-chicken.top/%5Bobject%20Object%5D/rating2-1/"/>
     <id>http://fried-chicken.top/[object Object]/rating2-1/</id>
     <published>2019-03-30T17:22:56.000Z</published>
-    <updated>2019-03-30T17:23:06.072Z</updated>
+    <updated>2019-03-30T17:28:13.047Z</updated>
     
     <content type="html"><![CDATA[<h1 id="比赛情况"><a href="#比赛情况" class="headerlink" title="比赛情况"></a>比赛情况</h1><p><img src="/[object Object]/rating2-1/1.png" alt="1"><br><img src="/[object Object]/rating2-1/2.png" alt="2"></p><p><strong> solved 4 out of 13 </strong></p><h2 id="排名：-14-87"><a href="#排名：-14-87" class="headerlink" title="排名：   14/87"></a>排名：   14/87</h2><h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2><p><strong> <font color="green">AC</font>题目 </strong>：A、E、F、L；<br><strong> <font color="red">WA/TLE</font>……题目 </strong>：C、M；</p><p>打得比较一般的一次吧，感觉这次虽然有不少超出我智商范围的题目，但是A五道题应该还是比较现实的，然而只拿了四个AC QAQ</p><p>开局看A是博弈疯狂莽，出了贼多次错，罚时瞬间上去了，但好在似乎别人也都疯狂莽A（？），过了A之后发现了本场真正的签到题（L），果断A掉。然后扫了一圈，发现F是个二分，感觉可做，于是WA一次（二分右界开小了）之后A掉，接着发现E是个简单的单源bfs，奈何bfs写得不太熟，花了不少时间，而且还很蠢的没有处理障碍（没错，我没有处理障碍物就能过样例）WA了一次之后A了。</p><p>然后觉得M蛮有意思的，又没人写，抱着拿一血的心态写起了M，于是写到了第四个小时，WA了十次……心态彻底崩了，果断放弃。</p><p>这时终于开始弄C了，其实之前反复读题的时候读到C，想了好几次C的做法，虽然感觉C应该是简单题，但就是不知道怎么写，现在硬着头皮写C，用暴力写了一个，然后加了一些可能是假的优化，果然TLE了，最后，发呆了五六分钟，比赛结束。</p><p>其实这场打得不是很开森，但是想到这场比赛是面向全校招募的，还有30多个路人大哥经历了五个小时只写出一题/一题都没写出来的比赛，他们心态肯定超级爆炸，就感觉开森了起来（哇，我素质好低啊）。</p>]]></content>
     
@@ -39,7 +39,7 @@
       <category term="总结" scheme="http://fried-chicken.top/categories/%E5%A4%A7%E4%B8%80%E4%B8%8B%E4%B8%89%E6%9C%88%E6%9C%88%E8%B5%9B/%E6%80%BB%E7%BB%93/"/>
     
     
-      <category term="大一下三月月赛总结" scheme="http://fried-chicken.top/tags/%E5%A4%A7%E4%B8%80%E4%B8%8B%E4%B8%89%E6%9C%88%E6%9C%88%E8%B5%9B%E6%80%BB%E7%BB%93/"/>
+      <category term="总结" scheme="http://fried-chicken.top/tags/%E6%80%BB%E7%BB%93/"/>
     
   </entry>
   
