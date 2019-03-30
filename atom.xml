@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://fried-chicken.top/"/>
-  <updated>2019-03-30T16:58:58.415Z</updated>
+  <updated>2019-03-30T17:23:06.072Z</updated>
   <id>http://fried-chicken.top/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>总结</title>
+    <link href="http://fried-chicken.top/%5Bobject%20Object%5D/rating2-1/"/>
+    <id>http://fried-chicken.top/[object Object]/rating2-1/</id>
+    <published>2019-03-30T17:22:56.000Z</published>
+    <updated>2019-03-30T17:23:06.072Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="比赛情况"><a href="#比赛情况" class="headerlink" title="比赛情况"></a>比赛情况</h1><p><img src="/[object Object]/rating2-1/1.png" alt="1"><br><img src="/[object Object]/rating2-1/2.png" alt="2"></p><p><strong> solved 4 out of 13 </strong></p><h2 id="排名：-14-87"><a href="#排名：-14-87" class="headerlink" title="排名：   14/87"></a>排名：   14/87</h2><h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2><p><strong> <font color="green">AC</font>题目 </strong>：A、E、F、L；<br><strong> <font color="red">WA/TLE</font>……题目 </strong>：C、M；</p><p>打得比较一般的一次吧，感觉这次虽然有不少超出我智商范围的题目，但是A五道题应该还是比较现实的，然而只拿了四个AC QAQ</p><p>开局看A是博弈疯狂莽，出了贼多次错，罚时瞬间上去了，但好在似乎别人也都疯狂莽A（？），过了A之后发现了本场真正的签到题（L），果断A掉。然后扫了一圈，发现F是个二分，感觉可做，于是WA一次（二分右界开小了）之后A掉，接着发现E是个简单的单源bfs，奈何bfs写得不太熟，花了不少时间，而且还很蠢的没有处理障碍（没错，我没有处理障碍物就能过样例）WA了一次之后A了。</p><p>然后觉得M蛮有意思的，又没人写，抱着拿一血的心态写起了M，于是写到了第四个小时，WA了十次……心态彻底崩了，果断放弃。</p><p>这时终于开始弄C了，其实之前反复读题的时候读到C，想了好几次C的做法，虽然感觉C应该是简单题，但就是不知道怎么写，现在硬着头皮写C，用暴力写了一个，然后加了一些可能是假的优化，果然TLE了，最后，发呆了五六分钟，比赛结束。</p><p>其实这场打得不是很开森，但是想到这场比赛是面向全校招募的，还有30多个路人大哥经历了五个小时只写出一题/一题都没写出来的比赛，他们心态肯定超级爆炸，就感觉开森了起来（哇，我素质好低啊）。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;比赛情况&quot;&gt;&lt;a href=&quot;#比赛情况&quot; class=&quot;headerlink&quot; title=&quot;比赛情况&quot;&gt;&lt;/a&gt;比赛情况&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;/[object Object]/rating2-1/1.png&quot; alt=&quot;1&quot;&gt;&lt;br&gt;&lt;img s
+      
+    
+    </summary>
+    
+      <category term="大一下三月月赛" scheme="http://fried-chicken.top/categories/%E5%A4%A7%E4%B8%80%E4%B8%8B%E4%B8%89%E6%9C%88%E6%9C%88%E8%B5%9B/"/>
+    
+      <category term="总结" scheme="http://fried-chicken.top/categories/%E5%A4%A7%E4%B8%80%E4%B8%8B%E4%B8%89%E6%9C%88%E6%9C%88%E8%B5%9B/%E6%80%BB%E7%BB%93/"/>
+    
+    
+      <category term="大一下三月月赛总结" scheme="http://fried-chicken.top/tags/%E5%A4%A7%E4%B8%80%E4%B8%8B%E4%B8%89%E6%9C%88%E6%9C%88%E8%B5%9B%E6%80%BB%E7%BB%93/"/>
+    
+  </entry>
   
   <entry>
     <title>J：Lylist 与魔法卡牌 Episode. 2</title>
@@ -173,11 +200,11 @@
   </entry>
   
   <entry>
-    <title>总结</title>
+    <title>2018寒假算法总结赛总结</title>
     <link href="http://fried-chicken.top/%5Bobject%20Object%5D/2018zj/"/>
     <id>http://fried-chicken.top/[object Object]/2018zj/</id>
     <published>2019-03-07T12:43:56.000Z</published>
-    <updated>2019-03-27T16:58:39.819Z</updated>
+    <updated>2019-03-30T17:23:17.587Z</updated>
     
     <content type="html"><![CDATA[<h1 id="比赛情况"><a href="#比赛情况" class="headerlink" title="比赛情况"></a>比赛情况</h1><h2 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h2><table><thead><tr><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th><th>G</th><th>H</th><th>I</th><th>J</th><th>K</th><th>L</th></tr></thead><tbody><tr><td></td><td></td><td><font color="blue">-5</font></td><td><font color="green">65</font></td><td><font color="green">19</font></td><td><font color="green">150(-1)</font></td><td></td><td></td><td></td><td></td><td><font color="green">37</font></td><td></td></tr><tr><td>2.3%</td><td>2.3%</td><td>0.0%</td><td>31.8%</td><td>97.7%</td><td>13.6%</td><td>4.5%</td><td>43.2%</td><td>2.3%</td><td>6.8%</td><td>90.9%</td><td>9.1%</td></tr></tbody></table><p>（第三行是通过率，按人头数计算）<br><strong>solved 4 out of 12</strong></p><h2 id="排名：-7-44"><a href="#排名：-7-44" class="headerlink" title="排名：   7/44"></a>排名：   7/44</h2><h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2><p>这场是大一下开学的第一次活动，学长们掏出了一套去年他们集训时做的题，而且引入了真实刺激的“学长数据”——赛时的榜单上可以看到去年的学长们在疯狂过题hhhhhhh。<br>感觉发挥还是ok的，水题都没有太花时间，而且没加罚时，排名也还ok，但是！选择了用最后的两个小时时间来写模拟（C题），我怕是真的石乐志了，最后没写出来，在绝望中结束了比赛ORZ，总之呢，其实也是有我图啊、线段树啊啥的看着就不想写的原因，最后选了个省脑子（其实也并不）的大模拟题来写，如果能重来，我选择做那道线段树水题（H）。</p>]]></content>
     
@@ -186,34 +213,6 @@
       
       
         &lt;h1 id=&quot;比赛情况&quot;&gt;&lt;a href=&quot;#比赛情况&quot; class=&quot;headerlink&quot; title=&quot;比赛情况&quot;&gt;&lt;/a&gt;比赛情况&lt;/h1&gt;&lt;h2 id=&quot;题目：&quot;&gt;&lt;a href=&quot;#题目：&quot; class=&quot;headerlink&quot; title=&quot;题目：&quot;&gt;&lt;/a&gt;题目
-      
-    
-    </summary>
-    
-      <category term="2018寒假算法总结赛" scheme="http://fried-chicken.top/categories/2018%E5%AF%92%E5%81%87%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93%E8%B5%9B/"/>
-    
-      <category term="总结" scheme="http://fried-chicken.top/categories/2018%E5%AF%92%E5%81%87%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93%E8%B5%9B/%E6%80%BB%E7%BB%93/"/>
-    
-    
-      <category term="总结" scheme="http://fried-chicken.top/tags/%E6%80%BB%E7%BB%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>总结</title>
-    <link href="http://fried-chicken.top/%5Bobject%20Object%5D/rating2-1/"/>
-    <id>http://fried-chicken.top/[object Object]/rating2-1/</id>
-    <published>2019-03-07T12:43:56.000Z</published>
-    <updated>2019-03-30T17:20:06.203Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="比赛情况"><a href="#比赛情况" class="headerlink" title="比赛情况"></a>比赛情况</h1><p>## </p><p><img src="/[object Object]/rating2-1/1.png" alt="1"><br><img src="/[object Object]/rating2-1/2.png" alt="2"></p><p><strong> solved 4 out of 13 </strong></p><h2 id="排名：-14-87"><a href="#排名：-14-87" class="headerlink" title="排名：   14/87"></a>排名：   14/87</h2><h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2><p><strong> <font color="green">AC</font>题目 </strong>：A、E、F、L；<br><strong> <font color="red">WA/TLE</font>……题目 </strong>：C、M；</p><p>打得比较一般的一次吧，感觉这次虽然有不少超出我智商范围的题目，但是A五道题应该还是比较现实的，然而只拿了四个AC QAQ</p><p>开局看A是博弈疯狂莽，出了贼多次错，罚时瞬间上去了，但好在似乎别人也都疯狂莽A（？），过了A之后发现了本场真正的签到题（L），果断A掉。然后扫了一圈，发现F是个二分，感觉可做，于是WA一次（二分右界开小了）之后A掉，接着发现E是个简单的单源bfs，奈何bfs写得不太熟，花了不少时间，而且还很蠢的没有处理障碍（没错，我没有处理障碍物就能过样例）WA了一次之后A了。</p><p>然后觉得M蛮有意思的，又没人写，抱着拿一血的心态写起了M，于是写到了第四个小时，WA了十次……心态彻底崩了，果断放弃。</p><p>这时终于开始弄C了，其实之前反复读题的时候读到C，想了好几次C的做法，虽然感觉C应该是简单题，但就是不知道怎么写，现在硬着头皮写C，用暴力写了一个，然后加了一些可能是假的优化，果然TLE了，最后，发呆了五六分钟，比赛结束。</p><p>其实这场打得不是很开森，但是想到这场比赛是面向全校招募的，还有30多个路人大哥经历了五个小时只写出一题/一题都没写出来的比赛，他们心态肯定超级爆炸，就感觉开森了起来（哇，我素质好低啊）。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;比赛情况&quot;&gt;&lt;a href=&quot;#比赛情况&quot; class=&quot;headerlink&quot; title=&quot;比赛情况&quot;&gt;&lt;/a&gt;比赛情况&lt;/h1&gt;&lt;p&gt;## &lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/[object Object]/rating2-1/1.png&quot; alt=&quot;1&quot;
       
     
     </summary>
