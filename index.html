@@ -421,6 +421,176 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://fried-chicken.top/[object Object]/rating2-1-i/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="fried-chicken">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="fried-chicken的blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/[object Object]/rating2-1-i/" itemprop="url">L：肥宅大哭.jpg</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-31T01:50:56+08:00">
+                2019-03-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/大一下三月月赛/" itemprop="url" rel="index">
+                    <span itemprop="name">大一下三月月赛</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/大一下三月月赛/I-魔法盒子/" itemprop="url" rel="index">
+                    <span itemprop="name">I. 魔法盒子</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/[object Object]/rating2-1-i/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="[object Object]/rating2-1-i/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><strong> 赛时状态：Unattemped;</strong></p>
+<p><strong> 补题状态：<font color="green">AC</font>(+7); </strong></p>
+<h1 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h1><p><img src="/[object Object]/rating2-1-i/1.png" alt="1"></p>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>首先的承认的是。我这个程序写的并不好，因为emmmm，直接上图吧：</p>
+<p><img src="/[object Object]/rating2-1-i/2.png" alt="1"></p>
+<p>没错，这题时限1000ms，我998ms的速度通过了这道题……是真的很极限了orz。</p>
+<p>从思路上来说还是很简单的，只要我们以n²的复杂度预处理好所有串的长度和魔法值，之后的q次询问我们就可以用二分来找到满足要求的最大长度值。</p>
+<p>但问题是，这个过程到处都是问题，到处都在反套路，有很多和我们习惯不一样的写法，详见下面注释。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">char</span> s[<span class="number">6010</span>];</span><br><span class="line"><span class="keyword">int</span> T,l,r,bound,len;</span><br><span class="line"><span class="keyword">int</span> mp[<span class="number">6010</span>][<span class="number">6010</span>];</span><br><span class="line"><span class="comment">//mp[len][mid]表示以mid为中心，len为长度的串魔法值（如果len是偶数，我们规定考虑左侧的那个字符作为中间字符）</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%s"</span>,s+<span class="number">1</span>);</span><br><span class="line">	len=<span class="built_in">strlen</span>(s+<span class="number">1</span>);</span><br><span class="line">	<span class="built_in">memset</span>(mp,<span class="number">-1</span>,<span class="keyword">sizeof</span>(mp));	<span class="comment">//-1表示未访问</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=len;i++)&#123;	<span class="comment">//奇数长更新 </span></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=len&amp;&amp;i-(j<span class="number">-1</span>)/<span class="number">2</span>&gt;=<span class="number">1</span>&amp;&amp;i+(j<span class="number">-1</span>)/<span class="number">2</span>&lt;=len;j+=<span class="number">2</span>)&#123;</span><br><span class="line">			<span class="keyword">if</span>(j==<span class="number">1</span>)&#123;</span><br><span class="line">				mp[<span class="number">1</span>][i]=<span class="number">0</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span>&#123;</span><br><span class="line">				mp[j][i]=<span class="built_in">abs</span>(s[i-(j<span class="number">-1</span>)/<span class="number">2</span>]-s[i+(j<span class="number">-1</span>)/<span class="number">2</span>])+mp[j<span class="number">-2</span>][i];</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=len;i++)&#123;	<span class="comment">//偶数长更新 </span></span><br><span class="line">		mp[<span class="number">0</span>][i]=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">2</span>;j&lt;=len&amp;&amp;i+j/<span class="number">2</span>&lt;=len&amp;&amp;i+<span class="number">1</span>-j/<span class="number">2</span>;j+=<span class="number">2</span>)&#123;</span><br><span class="line">			mp[j][i]=<span class="built_in">abs</span>(s[i+j/<span class="number">2</span>]-s[i+<span class="number">1</span>-j/<span class="number">2</span>])+mp[j<span class="number">-2</span>][i];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;T;</span><br><span class="line">	<span class="keyword">while</span>(T--)&#123;</span><br><span class="line">	<span class="comment">//以下是二分部分，本题最大的问题来了——题目要求在子串的头尾删等长的串！</span></span><br><span class="line">	<span class="comment">//也就是说，如果询问子串长为8，我们二分得到的答案可能为5，这是不满足要求的</span></span><br><span class="line">	<span class="comment">//怎么办呢？我们以询问串长的奇偶性分类讨论</span></span><br><span class="line">	<span class="comment">//以奇数为例，任意的一个奇数可以表示为2*n+1，因此我们二分这个n，得到的答案就一定是奇数了</span></span><br><span class="line">	<span class="comment">//偶数情况同理</span></span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>,&amp;l,&amp;r,&amp;bound);</span><br><span class="line">		<span class="keyword">if</span>((r-l+<span class="number">1</span>)%<span class="number">2</span>==<span class="number">1</span>)&#123;</span><br><span class="line">			<span class="keyword">int</span> lft=<span class="number">0</span>,rht=(r-l)/<span class="number">2</span>+<span class="number">1</span>;</span><br><span class="line">			<span class="keyword">while</span>(rht-lft&gt;<span class="number">1</span>)&#123;</span><br><span class="line">				<span class="keyword">int</span> mid=(lft+rht)/<span class="number">2</span>;</span><br><span class="line">				<span class="keyword">int</span> magic;</span><br><span class="line">				magic=mp[<span class="number">2</span>*mid+<span class="number">1</span>][(l+r)/<span class="number">2</span>];</span><br><span class="line">				<span class="keyword">if</span>(magic!=<span class="number">-1</span>&amp;&amp;magic&lt;=bound)&#123;</span><br><span class="line">					lft=mid;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">else</span>&#123;</span><br><span class="line">					rht=mid;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,<span class="number">2</span>*rht<span class="number">-1</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span>&#123;</span><br><span class="line">			<span class="keyword">int</span> lft=<span class="number">0</span>,rht=(r-l+<span class="number">1</span>)/<span class="number">2</span>+<span class="number">1</span>;</span><br><span class="line">			<span class="keyword">while</span>(rht-lft&gt;<span class="number">1</span>)&#123;</span><br><span class="line">				<span class="keyword">int</span> mid=(lft+rht)/<span class="number">2</span>;</span><br><span class="line">				<span class="keyword">int</span> magic;</span><br><span class="line">				magic=mp[<span class="number">2</span>*mid][(l+r<span class="number">-1</span>)/<span class="number">2</span>];</span><br><span class="line">				<span class="keyword">if</span>(magic!=<span class="number">-1</span>&amp;&amp;magic&lt;=bound)&#123;</span><br><span class="line">					lft=mid;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">else</span>&#123;</span><br><span class="line">					rht=mid;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;	</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,<span class="number">2</span>*rht<span class="number">-2</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://fried-chicken.top/[object Object]/rating2-1-l/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1753,218 +1923,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://fried-chicken.top/[object Object]/2018zj/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="fried-chicken">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="fried-chicken的blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/[object Object]/2018zj/" itemprop="url">2018寒假算法总结赛总结</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-07T20:43:56+08:00">
-                2019-03-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/2018寒假算法总结赛/" itemprop="url" rel="index">
-                    <span itemprop="name">2018寒假算法总结赛</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/2018寒假算法总结赛/总结/" itemprop="url" rel="index">
-                    <span itemprop="name">总结</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/[object Object]/2018zj/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="[object Object]/2018zj/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="比赛情况"><a href="#比赛情况" class="headerlink" title="比赛情况"></a>比赛情况</h1><h2 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h2><table>
-<thead>
-<tr>
-<th>A</th>
-<th>B</th>
-<th>C</th>
-<th>D</th>
-<th>E</th>
-<th>F</th>
-<th>G</th>
-<th>H</th>
-<th>I</th>
-<th>J</th>
-<th>K</th>
-<th>L</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td></td>
-<td></td>
-<td><font color="blue">-5</font></td>
-<td><font color="green">65</font></td>
-<td><font color="green">19</font></td>
-<td><font color="green">150(-1)</font></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td><font color="green">37</font></td>
-<td></td>
-</tr>
-<tr>
-<td>2.3%</td>
-<td>2.3%</td>
-<td>0.0%</td>
-<td>31.8%</td>
-<td>97.7%</td>
-<td>13.6%</td>
-<td>4.5%</td>
-<td>43.2%</td>
-<td>2.3%</td>
-<td>6.8%</td>
-<td>90.9%</td>
-<td>9.1%</td>
-</tr>
-</tbody>
-</table>
-<p>（第三行是通过率，按人头数计算）<br><strong>solved 4 out of 12</strong></p>
-<h2 id="排名：-7-44"><a href="#排名：-7-44" class="headerlink" title="排名：   7/44"></a>排名：   7/44</h2><h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2><p>这场是大一下开学的第一次活动，学长们掏出了一套去年他们集训时做的题，而且引入了真实刺激的“学长数据”——赛时的榜单上可以看到去年的学长们在疯狂过题hhhhhhh。<br>感觉发挥还是ok的，水题都没有太花时间，而且没加罚时，排名也还ok，但是！选择了用最后的两个小时时间来写模拟（C题），我怕是真的石乐志了，最后没写出来，在绝望中结束了比赛ORZ，总之呢，其实也是有我图啊、线段树啊啥的看着就不想写的原因，最后选了个省脑子（其实也并不）的大模拟题来写，如果能重来，我选择做那道线段树水题（H）。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2017,7 +1975,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -2028,7 +1986,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -2039,7 +1997,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
