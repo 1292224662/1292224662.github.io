@@ -255,6 +255,339 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://fried-chicken.top/[object Object]/2018zj-e/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="fried-chicken">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="fried-chicken的blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/[object Object]/2018zj-e/" itemprop="url">E：一起去划船</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-28T01:28:28+08:00">
+                2019-03-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/2018寒假算法总结赛/" itemprop="url" rel="index">
+                    <span itemprop="name">2018寒假算法总结赛</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/2018寒假算法总结赛/E：-一起去划船/" itemprop="url" rel="index">
+                    <span itemprop="name">E： 一起去划船</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/[object Object]/2018zj-e/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="[object Object]/2018zj-e/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><strong> 赛时状态：<font color="green">AC</font>(+) at 0:19; </strong></p>
+<h1 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h1><p><img src="/[object Object]/2018zj-e/1.png" alt="1"></p>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p><strong> 贪心大法好！ </strong><br>是一道久违的贪心题呢，不过真的好水啊orz。<br>根据小学数学的经验，我们把小姐姐按照时间从小到大排序，然后再一个一个过就行了，不开心的不让划，开心的就开心的划去吧~~~<br>啊对了，小心题目的数据范围，因为最大的中间变量会达到1e14，所以要用 long long 。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> T;</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> a[<span class="number">100010</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;T;</span><br><span class="line">	<span class="keyword">while</span>(T--)&#123;</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">"%lld"</span>,&amp;a[i]);</span><br><span class="line">		sort(a,a+n);</span><br><span class="line">		<span class="keyword">int</span> ans=<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">long</span> <span class="keyword">long</span> sum=a[<span class="number">0</span>];</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;n;i++)&#123;</span><br><span class="line">			<span class="keyword">if</span>(sum&lt;=a[i])&#123; </span><br><span class="line">				ans++;</span><br><span class="line">				sum+=a[i];</span><br><span class="line">			&#125; </span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;ans&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://fried-chicken.top/[object Object]/2018zj-d/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="fried-chicken">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="fried-chicken的blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/[object Object]/2018zj-d/" itemprop="url">D： 关灯</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-28T01:04:28+08:00">
+                2019-03-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/2018寒假算法总结赛/" itemprop="url" rel="index">
+                    <span itemprop="name">2018寒假算法总结赛</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/2018寒假算法总结赛/D：-关灯/" itemprop="url" rel="index">
+                    <span itemprop="name">D： 关灯</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/[object Object]/2018zj-d/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="[object Object]/2018zj-d/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><strong> 赛时状态：<font color="green">AC</font>(+) at 1:05; </strong></p>
+<h1 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h1><p><img src="/[object Object]/2018zj-d/1.png" alt="1"><br><img src="/[object Object]/2018zj-d/2.png" alt="2"><br><img src="/[object Object]/2018zj-d/3.png" alt="3"></p>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p><strong> 关灯的核心就是枚举第一行！ </strong><br>这题里样例数T的范围在2e5以下，首先我们注意到每个位置碰两次等价于没碰，所以每个位置的状态只有碰一次或没碰。<br>所以，对每一个样例，我们一共有2的16次方种操作。但显然T再乘个2的十六次方会疯狂超时。<br>这里，就需要了解一下关灯问题的套路了：枚举第一行！<br>原理是这样的，对于第一行的操作，一共只有2的4次方种，即16种，而操作完第一行之后，为了确保第一行的灯关掉（划重点！），第二行的操作是唯一确定的（例如第一行第二个为开，则第二行第二个必须操作一次关掉第一行第二个）。<br>这也就是说，只要我们把第一行的操作定下来了之后，之后的12个格子的操作就都是确定的了，即每一行都优先灭掉上面一行，根据这个，我们只需要16T的运算就可以解决问题。</p>
+<p>但是，其实这也不是最好的做法（但这次可以过，因为数据比较水orz）；</p>
+<p>最快的正确做法是！打表！<br>没错，每个棋盘状态唯一对应一个二进制数，我们只需要另写一个程序预处理好所有状况的可能，在询问时直接查询问状态所对应的二进制数的事先预处理的值就可以了。</p>
+<p>当然，我写的就是第一种方法，水过去了，打表懒得补了ORZ。</p>
+<h3 id="程序："><a href="#程序：" class="headerlink" title="程序："></a>程序：</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> T;</span><br><span class="line"><span class="keyword">char</span> mp[<span class="number">10</span>][<span class="number">10</span>];</span><br><span class="line"><span class="keyword">char</span> mpsave[<span class="number">10</span>][<span class="number">10</span>];</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">inmap</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(x&lt;=<span class="number">0</span>||x&gt;=<span class="number">5</span>||y&lt;=<span class="number">0</span>||y&gt;=<span class="number">5</span>)</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">change</span> <span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>( inmap(x,y) )</span><br><span class="line">		mp[x][y]=<span class="number">81</span>-mp[x][y];</span><br><span class="line">	<span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">push</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span>&#123;</span><br><span class="line">	change(x,y);</span><br><span class="line">	change(x,y+<span class="number">1</span>);</span><br><span class="line">	change(x,y<span class="number">-1</span>);</span><br><span class="line">	change(x+<span class="number">1</span>,y);</span><br><span class="line">	change(x<span class="number">-1</span>,y);</span><br><span class="line">	<span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;T;</span><br><span class="line">	<span class="keyword">while</span>(T--)&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%s%s%s%s"</span>,&amp;mp[<span class="number">1</span>][<span class="number">1</span>],&amp;mp[<span class="number">2</span>][<span class="number">1</span>],&amp;mp[<span class="number">3</span>][<span class="number">1</span>],&amp;mp[<span class="number">4</span>][<span class="number">1</span>]);</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">4</span>;i++)</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=<span class="number">4</span>;j++)</span><br><span class="line">				mpsave[i][j]=mp[i][j];</span><br><span class="line">		<span class="keyword">int</span> ans=<span class="number">1000</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> q=<span class="number">0</span>;q&lt;=<span class="number">1</span>;q++)</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> w=<span class="number">0</span>;w&lt;=<span class="number">1</span>;w++)</span><br><span class="line">				<span class="keyword">for</span>(<span class="keyword">int</span> e=<span class="number">0</span>;e&lt;=<span class="number">1</span>;e++)</span><br><span class="line">					<span class="keyword">for</span>(<span class="keyword">int</span> r=<span class="number">0</span>;r&lt;=<span class="number">1</span>;r++)&#123;</span><br><span class="line">						<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">4</span>;i++)</span><br><span class="line">							<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=<span class="number">4</span>;j++)</span><br><span class="line">								mp[i][j]=mpsave[i][j];</span><br><span class="line">						<span class="keyword">int</span> anssave=<span class="number">0</span>;</span><br><span class="line">						<span class="keyword">if</span>(q)&#123;</span><br><span class="line">							push(<span class="number">1</span>,<span class="number">1</span>);</span><br><span class="line">							anssave++;</span><br><span class="line">						&#125;</span><br><span class="line">						<span class="keyword">if</span>(w)&#123;</span><br><span class="line">							push(<span class="number">1</span>,<span class="number">2</span>);</span><br><span class="line">							anssave++;</span><br><span class="line">						&#125;</span><br><span class="line">						<span class="keyword">if</span>(e)&#123;</span><br><span class="line">							push(<span class="number">1</span>,<span class="number">3</span>);</span><br><span class="line">							anssave++;</span><br><span class="line">						&#125;</span><br><span class="line">						<span class="keyword">if</span>(r)&#123;</span><br><span class="line">							push(<span class="number">1</span>,<span class="number">4</span>);</span><br><span class="line">							anssave++;</span><br><span class="line">						&#125;</span><br><span class="line">						<span class="keyword">for</span>(<span class="keyword">int</span> x=<span class="number">2</span>;x&lt;=<span class="number">4</span>;x++)</span><br><span class="line">							<span class="keyword">for</span>(<span class="keyword">int</span> y=<span class="number">1</span>;y&lt;=<span class="number">4</span>;y++)&#123;</span><br><span class="line">								<span class="keyword">if</span>(mp[x<span class="number">-1</span>][y]==<span class="string">'#'</span>)&#123;</span><br><span class="line">									push(x,y);</span><br><span class="line">									anssave++;</span><br><span class="line">								&#125;</span><br><span class="line">							&#125;</span><br><span class="line">						<span class="keyword">bool</span> is_close=<span class="literal">true</span>;</span><br><span class="line">						<span class="keyword">for</span>(<span class="keyword">int</span> x=<span class="number">4</span>;x&gt;=<span class="number">1</span>;x--)</span><br><span class="line">							<span class="keyword">for</span>(<span class="keyword">int</span> y=<span class="number">4</span>;y&gt;=<span class="number">1</span>;y--)&#123;</span><br><span class="line">								<span class="keyword">if</span>(mp[x][y]==<span class="string">'#'</span>)&#123;</span><br><span class="line">									is_close=<span class="literal">false</span>;</span><br><span class="line">									<span class="keyword">break</span>;</span><br><span class="line">								&#125;</span><br><span class="line">							&#125;</span><br><span class="line">						<span class="keyword">if</span>(is_close&amp;&amp;ans&gt;anssave)		</span><br><span class="line">							ans=anssave;</span><br><span class="line">					&#125;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,ans==<span class="number">1000</span>?<span class="number">-1</span>:ans);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://fried-chicken.top/[object Object]/2018zj/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1062,7 +1395,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1073,7 +1406,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>

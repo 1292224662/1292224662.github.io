@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="水题,排序,模拟,">
+  <meta name="keywords" content="树状数组,线段树,dp,">
 
 
 
@@ -81,20 +81,20 @@
 
 
 
-<meta name="description" content="赛时状态：AC(+) at 0:37;  题目： 题解是水题本题了。 不过发现好多水题都喜欢让你写个结构，然后结合一下sort函数，这题也不例外。 sort真的是好用又重要，实是签到必备之函数 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950#include&amp;lt">
-<meta name="keywords" content="水题,排序,模拟">
+<meta name="description" content="赛时状态：Unattemped;  补题状态：AC(+3);  题目： 题解这题其实还是挺像之前的某道题的，所以思路就不说太多啦 某道题 特别注意，（a-b）%mod的形式是错的，因为会出现负数，所以一定要记得（a-b+mod）%mod！ 12345678910111213141516171819202122232425262728293031323334353637383940414243#i">
+<meta name="keywords" content="树状数组,线段树,dp">
 <meta property="og:type" content="article">
-<meta property="og:title" content="K：coachyang1000 的传说">
-<meta property="og:url" content="http://fried-chicken.top/[object Object]/2018zj-k/index.html">
+<meta property="og:title" content="D. 小D的递减序列">
+<meta property="og:url" content="http://fried-chicken.top/[object Object]/rating2-1-d/index.html">
 <meta property="og:site_name" content="fried-chicken的blog">
-<meta property="og:description" content="赛时状态：AC(+) at 0:37;  题目： 题解是水题本题了。 不过发现好多水题都喜欢让你写个结构，然后结合一下sort函数，这题也不例外。 sort真的是好用又重要，实是签到必备之函数 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950#include&amp;lt">
+<meta property="og:description" content="赛时状态：Unattemped;  补题状态：AC(+3);  题目： 题解这题其实还是挺像之前的某道题的，所以思路就不说太多啦 某道题 特别注意，（a-b）%mod的形式是错的，因为会出现负数，所以一定要记得（a-b+mod）%mod！ 12345678910111213141516171819202122232425262728293031323334353637383940414243#i">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://fried-chicken.top/[object%20Object]/2018zj-k/1.png">
-<meta property="og:updated_time" content="2019-03-28T17:53:17.486Z">
+<meta property="og:image" content="http://fried-chicken.top/[object%20Object]/rating2-1-d/1.png">
+<meta property="og:updated_time" content="2019-04-20T18:01:56.228Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="K：coachyang1000 的传说">
-<meta name="twitter:description" content="赛时状态：AC(+) at 0:37;  题目： 题解是水题本题了。 不过发现好多水题都喜欢让你写个结构，然后结合一下sort函数，这题也不例外。 sort真的是好用又重要，实是签到必备之函数 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950#include&amp;lt">
-<meta name="twitter:image" content="http://fried-chicken.top/[object%20Object]/2018zj-k/1.png">
+<meta name="twitter:title" content="D. 小D的递减序列">
+<meta name="twitter:description" content="赛时状态：Unattemped;  补题状态：AC(+3);  题目： 题解这题其实还是挺像之前的某道题的，所以思路就不说太多啦 某道题 特别注意，（a-b）%mod的形式是错的，因为会出现负数，所以一定要记得（a-b+mod）%mod！ 12345678910111213141516171819202122232425262728293031323334353637383940414243#i">
+<meta name="twitter:image" content="http://fried-chicken.top/[object%20Object]/rating2-1-d/1.png">
 
 
 
@@ -124,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://fried-chicken.top/[object Object]/2018zj-k/">
+  <link rel="canonical" href="http://fried-chicken.top/[object Object]/rating2-1-d/">
 
 
 
 
 
-  <title>K：coachyang1000 的传说 | fried-chicken的blog</title>
+  <title>D. 小D的递减序列 | fried-chicken的blog</title>
   
 
 
@@ -257,7 +257,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://fried-chicken.top/[object Object]/2018zj-k/">
+    <link itemprop="mainEntityOfPage" href="http://fried-chicken.top/[object Object]/rating2-1-d/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="fried-chicken">
@@ -274,7 +274,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">K：coachyang1000 的传说</h1>
+          <h1 class="post-title" itemprop="name headline">D. 小D的递减序列</h1>
         
 
         <div class="post-meta">
@@ -286,8 +286,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-29T01:50:28+08:00">
-                2019-03-29
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-21T02:01:56+08:00">
+                2019-04-21
               </time>
             
 
@@ -309,8 +309,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/2018寒假算法总结赛/" itemprop="url" rel="index">
-                    <span itemprop="name">2018寒假算法总结赛</span>
+                  <a href="/categories/大一下三月月赛/" itemprop="url" rel="index">
+                    <span itemprop="name">大一下三月月赛</span>
                   </a>
                 </span>
 
@@ -320,8 +320,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/2018寒假算法总结赛/K：coachyang1000-的传说/" itemprop="url" rel="index">
-                    <span itemprop="name">K：coachyang1000 的传说</span>
+                  <a href="/categories/大一下三月月赛/D-小D的递减序列/" itemprop="url" rel="index">
+                    <span itemprop="name">D. 小D的递减序列</span>
                   </a>
                 </span>
 
@@ -338,8 +338,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/[object Object]/2018zj-k/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="[object Object]/2018zj-k/" itemprop="commentCount"></span>
+                <a href="/[object Object]/rating2-1-d/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="[object Object]/rating2-1-d/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -367,12 +367,13 @@
       
 
       
-        <p><strong> 赛时状态：<font color="green">AC</font>(+) at 0:37; </strong></p>
-<h1 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h1><p><img src="/[object Object]/2018zj-k/1.png" alt="1"></p>
-<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>是水题本题了。</p>
-<p>不过发现好多水题都喜欢让你写个结构，然后结合一下sort函数，这题也不例外。</p>
-<p>sort真的是好用又重要，实是签到必备之函数</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">prb</span>&#123;</span></span><br><span class="line">	<span class="keyword">public</span>:</span><br><span class="line">	<span class="keyword">char</span> name[<span class="number">20</span>];</span><br><span class="line">	<span class="keyword">int</span> val[<span class="number">5</span>];</span><br><span class="line">	<span class="keyword">int</span> sum;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> _val)</span></span>&#123;</span><br><span class="line">		sort(val,val+<span class="number">5</span>);</span><br><span class="line">		<span class="keyword">if</span>(val[<span class="number">0</span>]&lt;=_val)&#123;</span><br><span class="line">			sum-=val[<span class="number">0</span>];</span><br><span class="line">			val[<span class="number">0</span>]=_val;</span><br><span class="line">			sum+=val[<span class="number">0</span>];</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> ;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">prb</span> <span class="title">prb</span>[1010];</span></span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;n)&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">"%s"</span>,prb[i].name);</span><br><span class="line">			<span class="keyword">int</span> tmp;</span><br><span class="line">			<span class="keyword">int</span> flag=<span class="number">1</span>;</span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;tmp);</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;i;j++)&#123;</span><br><span class="line">				<span class="keyword">if</span>( !<span class="built_in">strcmp</span>(prb[i].name,prb[j].name) )&#123;</span><br><span class="line">					prb[j].add(tmp);</span><br><span class="line">					prb[i].sum=<span class="number">0</span>;</span><br><span class="line">					flag=<span class="number">0</span>;</span><br><span class="line">					<span class="keyword">break</span>;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;		</span><br><span class="line">			<span class="keyword">if</span>(flag)</span><br><span class="line">				prb[i].add(tmp);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">int</span> ans=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">			ans+=prb[i].sum;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,ans);</span><br><span class="line">		<span class="built_in">memset</span>(prb,<span class="number">0</span>,<span class="keyword">sizeof</span>(prb));</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p><strong> 赛时状态：Unattemped;</strong></p>
+<p><strong> 补题状态：<font color="green">AC</font>(+3); </strong></p>
+<h1 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h1><p><img src="/[object Object]/rating2-1-d/1.png" alt="1"></p>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>这题其实还是挺像之前的某道题的，所以思路就不说太多啦</p>
+<p><a href="http://fried-chicken.top/categories/2018%E5%AF%92%E5%81%87%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93%E8%B5%9B/J%EF%BC%9ALylist-%E4%B8%8E%E9%AD%94%E6%B3%95%E5%8D%A1%E7%89%8C-Episode-2/">某道题</a></p>
+<p>特别注意，（a-b）%mod的形式是错的，因为会出现负数，所以一定要记得（a-b+mod）%mod！</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> Li[<span class="number">100010</span>][<span class="number">12</span>];</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">long</span> <span class="keyword">long</span> mod=<span class="number">1e9</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">long</span> <span class="keyword">long</span> <span class="title">lb</span><span class="params">(<span class="keyword">long</span> <span class="keyword">long</span> x)</span></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> x&amp;(-x);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">update</span><span class="params">(<span class="keyword">int</span> num,<span class="keyword">int</span> pos ,<span class="keyword">long</span> <span class="keyword">long</span> x)</span></span>&#123;</span><br><span class="line">	<span class="keyword">while</span>(pos&lt;=<span class="number">100001</span>)&#123;</span><br><span class="line">		Li[pos][num]+=x;</span><br><span class="line">		Li[pos][num]%=mod;</span><br><span class="line">		pos+=lb(pos);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">long</span> <span class="keyword">long</span> <span class="title">sum</span><span class="params">(<span class="keyword">int</span> num,<span class="keyword">int</span> pos)</span></span>&#123;</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">long</span> ans=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(pos)&#123;</span><br><span class="line">		ans+=Li[pos][num];</span><br><span class="line">		ans%=mod;</span><br><span class="line">		pos-=lb(pos);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n,k;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n&gt;&gt;k;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">		<span class="keyword">long</span> <span class="keyword">long</span> tmp;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%lld"</span>,&amp;tmp);</span><br><span class="line">		update(<span class="number">1</span>,tmp+<span class="number">1</span>,<span class="number">1</span>);</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=k;i++)&#123;</span><br><span class="line">			update(i,tmp+<span class="number">1</span>,(mod+sum(i<span class="number">-1</span>,<span class="number">100005</span>)-sum(i<span class="number">-1</span>,tmp+<span class="number">1</span>))%mod);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;sum(k,<span class="number">100005</span>)&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -389,11 +390,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/水题/" rel="tag"># 水题</a>
+            <a href="/tags/树状数组/" rel="tag"># 树状数组</a>
           
-            <a href="/tags/排序/" rel="tag"># 排序</a>
+            <a href="/tags/线段树/" rel="tag"># 线段树</a>
           
-            <a href="/tags/模拟/" rel="tag"># 模拟</a>
+            <a href="/tags/dp/" rel="tag"># dp</a>
           
         </div>
       
@@ -406,8 +407,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/[object Object]/2018zj-f/" rel="next" title="F：Teammates and Red Envelopes">
-                <i class="fa fa-chevron-left"></i> F：Teammates and Red Envelopes
+              <a href="/[object Object]/rating2-1-i/" rel="next" title="I. 魔法盒子">
+                <i class="fa fa-chevron-left"></i> I. 魔法盒子
               </a>
             
           </div>
@@ -416,8 +417,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/[object Object]/2018zj-j/" rel="prev" title="J：Lylist 与魔法卡牌 Episode. 2">
-                J：Lylist 与魔法卡牌 Episode. 2 <i class="fa fa-chevron-right"></i>
+              <a href="/[object Object]/rating2-1-c/" rel="prev" title="C. 良心出题人又来啦 ！">
+                C. 良心出题人又来啦 ！ <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -732,9 +733,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://fried-chicken.top/[object Object]/2018zj-k/';
-          this.page.identifier = '[object Object]/2018zj-k/';
-          this.page.title = 'K：coachyang1000 的传说';
+          this.page.url = 'http://fried-chicken.top/[object Object]/rating2-1-d/';
+          this.page.identifier = '[object Object]/rating2-1-d/';
+          this.page.title = 'D. 小D的递减序列';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://.disqus.com/embed.js';
