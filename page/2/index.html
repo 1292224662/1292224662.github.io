@@ -255,6 +255,1354 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://fried-chicken.top/[object Object]/rating2-1-i/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="fried-chicken">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="fried-chicken的blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/[object Object]/rating2-1-i/" itemprop="url">I. 魔法盒子</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-21T01:29:56+08:00">
+                2019-04-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/大一下三月月赛/" itemprop="url" rel="index">
+                    <span itemprop="name">大一下三月月赛</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/大一下三月月赛/I-魔法盒子/" itemprop="url" rel="index">
+                    <span itemprop="name">I. 魔法盒子</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/[object Object]/rating2-1-i/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="[object Object]/rating2-1-i/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><strong> 赛时状态：Unattemped;</strong></p>
+<p><strong> 补题状态：<font color="green">AC</font>(+7); </strong></p>
+<h1 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h1><p><img src="/[object Object]/rating2-1-i/1.png" alt="1"></p>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>首先得承认的是。我这个程序写的并不好，因为emmmm，直接上图吧：</p>
+<p><img src="/[object Object]/rating2-1-i/2.png" alt="1"></p>
+<p>没错，这题时限1000ms，我998ms的速度通过了这道题……是真的很极限了orz。</p>
+<p>从思路上来说还是很简单的，只要我们以n²的复杂度预处理好所有串的长度和魔法值，之后的q次询问我们就可以用二分来找到满足要求的最大长度值。</p>
+<p>但问题是，这个过程到处都是问题，到处都在反套路，有很多和我们习惯不一样的写法，详见下面注释。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">char</span> s[<span class="number">6010</span>];</span><br><span class="line"><span class="keyword">int</span> T,l,r,bound,len;</span><br><span class="line"><span class="keyword">int</span> mp[<span class="number">6010</span>][<span class="number">6010</span>];</span><br><span class="line"><span class="comment">//mp[len][mid]表示以mid为中心，len为长度的串魔法值（如果len是偶数，我们规定考虑左侧的那个字符作为中间字符）</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%s"</span>,s+<span class="number">1</span>);</span><br><span class="line">	len=<span class="built_in">strlen</span>(s+<span class="number">1</span>);</span><br><span class="line">	<span class="built_in">memset</span>(mp,<span class="number">-1</span>,<span class="keyword">sizeof</span>(mp));	<span class="comment">//-1表示未访问</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=len;i++)&#123;	<span class="comment">//奇数长更新 </span></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=len&amp;&amp;i-(j<span class="number">-1</span>)/<span class="number">2</span>&gt;=<span class="number">1</span>&amp;&amp;i+(j<span class="number">-1</span>)/<span class="number">2</span>&lt;=len;j+=<span class="number">2</span>)&#123;</span><br><span class="line">			<span class="keyword">if</span>(j==<span class="number">1</span>)&#123;</span><br><span class="line">				mp[<span class="number">1</span>][i]=<span class="number">0</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span>&#123;</span><br><span class="line">				mp[j][i]=<span class="built_in">abs</span>(s[i-(j<span class="number">-1</span>)/<span class="number">2</span>]-s[i+(j<span class="number">-1</span>)/<span class="number">2</span>])+mp[j<span class="number">-2</span>][i];</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=len;i++)&#123;	<span class="comment">//偶数长更新 </span></span><br><span class="line">		mp[<span class="number">0</span>][i]=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">2</span>;j&lt;=len&amp;&amp;i+j/<span class="number">2</span>&lt;=len&amp;&amp;i+<span class="number">1</span>-j/<span class="number">2</span>;j+=<span class="number">2</span>)&#123;</span><br><span class="line">			mp[j][i]=<span class="built_in">abs</span>(s[i+j/<span class="number">2</span>]-s[i+<span class="number">1</span>-j/<span class="number">2</span>])+mp[j<span class="number">-2</span>][i];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;T;</span><br><span class="line">	<span class="keyword">while</span>(T--)&#123;</span><br><span class="line">	<span class="comment">//以下是二分部分，本题最大的问题来了——题目要求在子串的头尾删等长的串！</span></span><br><span class="line">	<span class="comment">//也就是说，如果询问子串长为8，我们二分得到的答案可能为5，这是不满足要求的</span></span><br><span class="line">	<span class="comment">//怎么办呢？我们以询问串长的奇偶性分类讨论</span></span><br><span class="line">	<span class="comment">//以奇数为例，任意的一个奇数可以表示为2*n+1，因此我们二分这个n，得到的答案就一定是奇数了</span></span><br><span class="line">	<span class="comment">//偶数情况同理</span></span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>,&amp;l,&amp;r,&amp;bound);</span><br><span class="line">		<span class="keyword">if</span>((r-l+<span class="number">1</span>)%<span class="number">2</span>==<span class="number">1</span>)&#123;</span><br><span class="line">			<span class="keyword">int</span> lft=<span class="number">0</span>,rht=(r-l)/<span class="number">2</span>+<span class="number">1</span>;</span><br><span class="line">			<span class="keyword">while</span>(rht-lft&gt;<span class="number">1</span>)&#123;</span><br><span class="line">				<span class="keyword">int</span> mid=(lft+rht)/<span class="number">2</span>;</span><br><span class="line">				<span class="keyword">int</span> magic;</span><br><span class="line">				magic=mp[<span class="number">2</span>*mid+<span class="number">1</span>][(l+r)/<span class="number">2</span>];</span><br><span class="line">				<span class="keyword">if</span>(magic!=<span class="number">-1</span>&amp;&amp;magic&lt;=bound)&#123;</span><br><span class="line">					lft=mid;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">else</span>&#123;</span><br><span class="line">					rht=mid;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,<span class="number">2</span>*rht<span class="number">-1</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span>&#123;</span><br><span class="line">			<span class="keyword">int</span> lft=<span class="number">0</span>,rht=(r-l+<span class="number">1</span>)/<span class="number">2</span>+<span class="number">1</span>;</span><br><span class="line">			<span class="keyword">while</span>(rht-lft&gt;<span class="number">1</span>)&#123;</span><br><span class="line">				<span class="keyword">int</span> mid=(lft+rht)/<span class="number">2</span>;</span><br><span class="line">				<span class="keyword">int</span> magic;</span><br><span class="line">				magic=mp[<span class="number">2</span>*mid][(l+r<span class="number">-1</span>)/<span class="number">2</span>];</span><br><span class="line">				<span class="keyword">if</span>(magic!=<span class="number">-1</span>&amp;&amp;magic&lt;=bound)&#123;</span><br><span class="line">					lft=mid;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">else</span>&#123;</span><br><span class="line">					rht=mid;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;	</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,<span class="number">2</span>*rht<span class="number">-2</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://fried-chicken.top/[object Object]/rating2-1-e/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="fried-chicken">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="fried-chicken的blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/[object Object]/rating2-1-e/" itemprop="url">E：争夺宇宙魔方</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-31T01:59:56+08:00">
+                2019-03-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/大一下三月月赛/" itemprop="url" rel="index">
+                    <span itemprop="name">大一下三月月赛</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/大一下三月月赛/E：争夺宇宙魔方/" itemprop="url" rel="index">
+                    <span itemprop="name">E：争夺宇宙魔方</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/[object Object]/rating2-1-e/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="[object Object]/rating2-1-e/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><strong> 赛时状态：<font color="green">AC</font>(+<font color="red">1</font>) at 2:40; </strong></p>
+<h1 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h1><p><img src="/[object Object]/rating2-1-e/1.png" alt="1"></p>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>以宇宙魔方的所在地为原点，bfs求它到其它所有点的最短距离，只要他到某点的最短距离小于他到Carol的最短距离，就说明这个点上的敌人会先于Carol到达宇宙魔方处，因此这个点上的飞船数就要加到答案上，最后输出答案即可。</p>
+<p>多组样例输入，记得初始化。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">point</span>&#123;</span></span><br><span class="line">	<span class="keyword">int</span> x;<span class="keyword">int</span> y;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">int</span> movex[<span class="number">5</span>]=&#123;<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">-1</span>,<span class="number">0</span>&#125;;</span><br><span class="line"><span class="keyword">int</span> movey[<span class="number">5</span>]=&#123;<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">-1</span>&#125;;</span><br><span class="line"><span class="built_in">queue</span>&lt;point&gt;  q;</span><br><span class="line">point beg;</span><br><span class="line">point psave;</span><br><span class="line">point carol;</span><br><span class="line"><span class="keyword">int</span> m,n;</span><br><span class="line"><span class="keyword">char</span> mp[<span class="number">110</span>][<span class="number">110</span>];</span><br><span class="line"><span class="keyword">int</span> ene[<span class="number">110</span>][<span class="number">110</span>];</span><br><span class="line"><span class="keyword">bool</span> vis[<span class="number">110</span>][<span class="number">110</span>];</span><br><span class="line"><span class="keyword">int</span> dis[<span class="number">110</span>][<span class="number">110</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">ok</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> x&gt;=<span class="number">1</span>&amp;&amp;x&lt;=n&amp;&amp;y&lt;=m&amp;&amp;y&gt;=<span class="number">1</span>&amp;&amp;mp[x][y]!=<span class="string">'T'</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span>  <span class="title">bfs</span><span class="params">( )</span></span>&#123;</span><br><span class="line">  <span class="keyword">while</span>(!q.empty())&#123;</span><br><span class="line">	point p=q.front();</span><br><span class="line">	q.pop();</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">4</span>;i++)&#123;</span><br><span class="line">		psave.x=p.x+movex[i];</span><br><span class="line">		psave.y=p.y+movey[i];</span><br><span class="line">		<span class="keyword">if</span>( ok(psave.x,psave.y)&amp;&amp;!vis[psave.x][psave.y] )&#123;</span><br><span class="line">		    q.push(psave);</span><br><span class="line">		    dis[psave.x][psave.y]=min(dis[psave.x][psave.y],dis[p.x][p.y]+<span class="number">1</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		vis[psave.x][psave.y]=<span class="literal">true</span>;</span><br><span class="line">	&#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">while</span>(~<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;n,&amp;m))&#123;</span><br><span class="line">		<span class="built_in">memset</span>(mp,<span class="number">0</span>,<span class="keyword">sizeof</span>(mp));</span><br><span class="line">		<span class="built_in">memset</span>(vis,<span class="number">0</span>,<span class="keyword">sizeof</span>(vis));</span><br><span class="line">		<span class="built_in">memset</span>(ene,<span class="number">0</span>,<span class="keyword">sizeof</span>(ene));</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">100</span>;i++)&#123;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=<span class="number">100</span>;j++)</span><br><span class="line">				dis[i][j]=<span class="number">1e7</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=m;j++)&#123;</span><br><span class="line">				<span class="keyword">char</span> tmp;</span><br><span class="line">				<span class="built_in">scanf</span>(<span class="string">"%c"</span>,&amp;tmp);</span><br><span class="line">				<span class="keyword">if</span>(tmp==<span class="string">'\n'</span>)</span><br><span class="line">					<span class="built_in">scanf</span>(<span class="string">"%c"</span>,&amp;tmp);</span><br><span class="line">				mp[i][j]=tmp;</span><br><span class="line">				<span class="keyword">if</span>(tmp==<span class="string">'E'</span>)&#123;</span><br><span class="line">					beg.x=i,beg.y=j;</span><br><span class="line">					dis[beg.x][beg.y]=<span class="number">0</span>;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">if</span>(tmp==<span class="string">'S'</span>)&#123;</span><br><span class="line">					carol.x=i;carol.y=j;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">if</span>(tmp&lt;=<span class="string">'9'</span>&amp;&amp;tmp&gt;=<span class="string">'1'</span>)&#123;</span><br><span class="line">					ene[i][j]=tmp-<span class="string">'0'</span>;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		q.push(beg);</span><br><span class="line">		bfs();</span><br><span class="line">		<span class="keyword">int</span> time=dis[carol.x][carol.y];</span><br><span class="line">		<span class="keyword">int</span> ans=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=m;j++)&#123;</span><br><span class="line">				<span class="keyword">if</span>(ene[i][j]&amp;&amp;dis[i][j]&lt;=time)&#123;</span><br><span class="line">					ans+=ene[i][j];	</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,ans);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://fried-chicken.top/[object Object]/rating2-1-l/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="fried-chicken">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="fried-chicken的blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/[object Object]/rating2-1-l/" itemprop="url">L：肥宅大哭.jpg</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-31T01:50:56+08:00">
+                2019-03-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/大一下三月月赛/" itemprop="url" rel="index">
+                    <span itemprop="name">大一下三月月赛</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/大一下三月月赛/L：肥宅大哭-jpg/" itemprop="url" rel="index">
+                    <span itemprop="name">L：肥宅大哭.jpg</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/[object Object]/rating2-1-l/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="[object Object]/rating2-1-l/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><strong> 赛时状态：<font color="green">AC</font>(+<font color="red"></font>) at 1:00; </strong></p>
+<h1 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h1><p><img src="/[object Object]/rating2-1-l/1.png" alt="1"></p>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>emmm差点没仔细看题，把它当成一个两种费用的背包问题了orz。</p>
+<p>照着题意模拟呗，话说我cmp函数里还考虑了难度相同的情况要优先做耗时短的，现在写题解的时候才发现题目里已经要求不会出现相同的题目难度了。</p>
+<p>哦对，而且long long我开的好像也多余，int够用了，可以说是态度很诚恳地一道签到题了。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> T;</span><br><span class="line"><span class="keyword">int</span> N,M;	</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ti</span>&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">long</span> d;</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">long</span> t;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(ti pre,ti aft)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(pre.d!=aft.d)</span><br><span class="line">		<span class="keyword">return</span> pre.d&lt;aft.d;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="keyword">return</span> pre.t&lt;aft.t;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ti a[<span class="number">110000</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;T;</span><br><span class="line">	<span class="keyword">int</span> sit=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(T--)&#123;</span><br><span class="line">		<span class="keyword">long</span> <span class="keyword">long</span> ans=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">long</span> <span class="keyword">long</span> tcur=<span class="number">0</span>;</span><br><span class="line">		sit++;</span><br><span class="line">		<span class="built_in">memset</span>(a,<span class="number">0</span>,<span class="keyword">sizeof</span>(a));</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;N&gt;&gt;M;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=N;i++)&#123;</span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">"%lld"</span>,&amp;a[i].d);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=N;i++)&#123;</span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">"%lld"</span>,&amp;a[i].t);</span><br><span class="line">		&#125;</span><br><span class="line">		sort(a+<span class="number">1</span>,a+<span class="number">1</span>+N,cmp);</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=N;i++)&#123;</span><br><span class="line">			<span class="keyword">if</span>(tcur+a[i].t&lt;=M)&#123;</span><br><span class="line">				ans++;</span><br><span class="line">				tcur+=a[i].t;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span>&#123;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"Case %d: %lld\n"</span>,sit,ans);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://fried-chicken.top/[object Object]/rating2-1-a/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="fried-chicken">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="fried-chicken的blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/[object Object]/rating2-1-a/" itemprop="url">A： Ervin and Joker</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-31T01:47:56+08:00">
+                2019-03-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/大一下三月月赛/" itemprop="url" rel="index">
+                    <span itemprop="name">大一下三月月赛</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/大一下三月月赛/A：-Ervin-and-Joker/" itemprop="url" rel="index">
+                    <span itemprop="name">A： Ervin and Joker</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/[object Object]/rating2-1-a/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="[object Object]/rating2-1-a/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><strong> 赛时状态：<font color="green">AC</font>(+<font color="red">4</font>) at 0:42; </strong></p>
+<h1 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h1><p><img src="/[object Object]/rating2-1-a/1.png" alt="1"></p>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>一开始疯狂读错题，疯狂瞎猜，疯狂WA。</p>
+<p>后来冷静下来，认真的左右互搏手玩了几把，发现规律了，即n=0（没错，n居然可以为0！）、k=1且n%2=1的两种情况显然是先手输，除此之外的情况，只要先手从中间拿1或2个，使得剩下的石子被分成均匀的两堆，那么之后，先手只需要重复后手的动作，便一定可以获胜。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> n,k;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n&gt;&gt;k;</span><br><span class="line">	<span class="keyword">if</span>(!n)&#123;</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;<span class="string">"Joker"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(k==<span class="number">1</span>)&#123;</span><br><span class="line">		<span class="keyword">if</span>(n%<span class="number">2</span>)</span><br><span class="line">			<span class="built_in">cout</span>&lt;&lt;<span class="string">"Ervin"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			<span class="built_in">cout</span>&lt;&lt;<span class="string">"Joker"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">"Ervin"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://fried-chicken.top/[object Object]/rating2-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="fried-chicken">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="fried-chicken的blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/[object Object]/rating2-1/" itemprop="url">大一下三月月赛总结</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-31T01:22:56+08:00">
+                2019-03-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/大一下三月月赛/" itemprop="url" rel="index">
+                    <span itemprop="name">大一下三月月赛</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/大一下三月月赛/总结/" itemprop="url" rel="index">
+                    <span itemprop="name">总结</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/[object Object]/rating2-1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="[object Object]/rating2-1/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="比赛情况"><a href="#比赛情况" class="headerlink" title="比赛情况"></a>比赛情况</h1><p><img src="/[object Object]/rating2-1/1.png" alt="1"><br><img src="/[object Object]/rating2-1/2.png" alt="2"></p>
+<p><strong> solved 4 out of 13 </strong></p>
+<h2 id="排名：-14-87"><a href="#排名：-14-87" class="headerlink" title="排名：   14/87"></a>排名：   14/87</h2><h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2><p><strong> <font color="green">AC</font>题目 </strong>：A、E、F、L；<br><strong> <font color="red">WA/TLE</font>……题目 </strong>：C、M；</p>
+<p>打得比较一般的一次吧，感觉这次虽然有不少超出我智商范围的题目，但是A五道题应该还是比较现实的，然而只拿了四个AC QAQ</p>
+<p>开局看A是博弈疯狂莽，出了贼多次错，罚时瞬间上去了，但好在似乎别人也都疯狂莽A（？），过了A之后发现了本场真正的签到题（L），果断A掉。然后扫了一圈，发现F是个二分，感觉可做，于是WA一次（二分右界开小了）之后A掉，接着发现E是个简单的单源bfs，奈何bfs写得不太熟，花了不少时间，而且还很蠢的没有处理障碍（没错，我没有处理障碍物就能过样例）WA了一次之后A了。</p>
+<p>然后觉得M蛮有意思的，又没人写，抱着拿一血的心态写起了M，于是写到了第四个小时，WA了十次……心态彻底崩了，果断放弃。</p>
+<p>这时终于开始弄C了，其实之前反复读题的时候读到C，想了好几次C的做法，虽然感觉C应该是简单题，但就是不知道怎么写，现在硬着头皮写C，用暴力写了一个，然后加了一些可能是假的优化，果然TLE了，最后，发呆了五六分钟，比赛结束。</p>
+<p>其实这场打得不是很开森，但是想到这场比赛是面向全校招募的，还有30多个路人大哥经历了五个小时只写出一题/一题都没写出来的比赛，他们心态肯定超级爆炸，就感觉开森了起来（哇，我素质好低啊）。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://fried-chicken.top/[object Object]/2018zj-j/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="fried-chicken">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="fried-chicken的blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/[object Object]/2018zj-j/" itemprop="url">J：Lylist 与魔法卡牌 Episode. 2</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-31T00:50:28+08:00">
+                2019-03-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/2018寒假算法总结赛/" itemprop="url" rel="index">
+                    <span itemprop="name">2018寒假算法总结赛</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/2018寒假算法总结赛/J：Lylist-与魔法卡牌-Episode-2/" itemprop="url" rel="index">
+                    <span itemprop="name">J：Lylist 与魔法卡牌 Episode. 2</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/[object Object]/2018zj-j/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="[object Object]/2018zj-j/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><strong> 赛时状态：Unattemped; </strong><br><strong> 补题状态：<font color="green">AC</font>(+<font color="red">2</font>); </strong></p>
+<h1 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h1><p><img src="/[object Object]/2018zj-j/1.png" alt="1"><br><img src="/[object Object]/2018zj-j/2.png" alt="2"></p>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>看这篇题解的标签数量也知道这题不是什么善茬orz</p>
+<p>我们用动态规划的思维来考虑这个问题，假设前k个数对应的答案是ans，那么前k+1个数对应的答案为 ans+（以前k个数中比a[k+1]小的所有数中最大的那个数结尾的非递减序列数目，这句话一口气说完好累orz，您读的时候仔细断下句），所以，如果我们可以存下（以前k个数中比a[k+1]小的所有数中最大的那个数结尾的非递减序列数目）的话，这个问题就可以解决。</p>
+<p>因此，我们考虑定义映射数组s，这个数组的第k个元素代表（当前以k结尾的非递减序列的数目），以第二组样例为例，在读入五个数的过程中，s数组是这样变化的：<br>s[10]=1<br>s[20]=2<br>s[10]=3 (= 1(第三个10自己)+1(s[10]更新前的值)+1（s[10]更新前的值后面再加上第四个10组成的新序列） )<br>s[10]=7<br>s[10]=15</p>
+<p>最后的答案是s中所有非0元素之和，即17。<br>当然这个例子比较特殊，出现了很多个10，更一般的，当我们读入一个数k，那么s[k]=1（只有自己）+ s[k]（s[k]当前的值） + sum（k-1）（前k-1个数结尾的序列总共有多少个，这些序列最后加上k都是满足要求的船新序列）。最后，求s数组所有元素和即为答案（因为s数组所有元素即是所有的以不同数字结尾的、满足条件的序列）</p>
+<p>但是，上述过程中出现了sum，因此直接写会O（n²）超时，使用树状数组或线段树优化，可以达到O（nlogn）的复杂度，顺利通过。</p>
+<p>代码（树状数组版）：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> a[<span class="number">100010</span>];</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">long</span> <span class="keyword">long</span> mod=<span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">long</span> <span class="keyword">long</span> <span class="title">lb</span><span class="params">(<span class="keyword">long</span> <span class="keyword">long</span> x)</span></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> x&amp;(-x);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> pos ,<span class="keyword">long</span> <span class="keyword">long</span> x)</span></span>&#123;</span><br><span class="line">	<span class="keyword">while</span>(pos&lt;=<span class="number">100001</span>)&#123;</span><br><span class="line">		a[pos]+=x;</span><br><span class="line">		a[pos]%=mod;</span><br><span class="line">		pos+=lb(pos);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">long</span> <span class="keyword">long</span> <span class="title">sum</span><span class="params">(<span class="keyword">int</span> pos)</span></span>&#123;</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">long</span> ans=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(pos)&#123;</span><br><span class="line">		ans+=a[pos];</span><br><span class="line">		ans%=mod;</span><br><span class="line">		pos-=lb(pos);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> T;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;T;</span><br><span class="line">	<span class="keyword">int</span> sit=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(T--)&#123;</span><br><span class="line">		sit++;</span><br><span class="line">		<span class="keyword">int</span> n;</span><br><span class="line">		<span class="built_in">memset</span>(a,<span class="number">0</span>,<span class="keyword">sizeof</span>(a));</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;n; </span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">			<span class="keyword">long</span> <span class="keyword">long</span> tmp;</span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">"%lld"</span>,&amp;tmp);</span><br><span class="line">			add(tmp,sum(tmp));</span><br><span class="line">			a[tmp]%=mod;</span><br><span class="line">			add(tmp,<span class="number">1</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"Case %d: %lld\n"</span>,sit,sum(<span class="number">100001</span>));</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://fried-chicken.top/[object Object]/2018zj-k/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="fried-chicken">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="fried-chicken的blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/[object Object]/2018zj-k/" itemprop="url">K：coachyang1000 的传说</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-29T01:50:28+08:00">
+                2019-03-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/2018寒假算法总结赛/" itemprop="url" rel="index">
+                    <span itemprop="name">2018寒假算法总结赛</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/2018寒假算法总结赛/K：coachyang1000-的传说/" itemprop="url" rel="index">
+                    <span itemprop="name">K：coachyang1000 的传说</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/[object Object]/2018zj-k/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="[object Object]/2018zj-k/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><strong> 赛时状态：<font color="green">AC</font>(+) at 0:37; </strong></p>
+<h1 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h1><p><img src="/[object Object]/2018zj-k/1.png" alt="1"></p>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>是水题本题了。</p>
+<p>不过发现好多水题都喜欢让你写个结构，然后结合一下sort函数，这题也不例外。</p>
+<p>sort真的是好用又重要，实是签到必备之函数</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">prb</span>&#123;</span></span><br><span class="line">	<span class="keyword">public</span>:</span><br><span class="line">	<span class="keyword">char</span> name[<span class="number">20</span>];</span><br><span class="line">	<span class="keyword">int</span> val[<span class="number">5</span>];</span><br><span class="line">	<span class="keyword">int</span> sum;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> _val)</span></span>&#123;</span><br><span class="line">		sort(val,val+<span class="number">5</span>);</span><br><span class="line">		<span class="keyword">if</span>(val[<span class="number">0</span>]&lt;=_val)&#123;</span><br><span class="line">			sum-=val[<span class="number">0</span>];</span><br><span class="line">			val[<span class="number">0</span>]=_val;</span><br><span class="line">			sum+=val[<span class="number">0</span>];</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> ;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">prb</span> <span class="title">prb</span>[1010];</span></span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;n)&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">"%s"</span>,prb[i].name);</span><br><span class="line">			<span class="keyword">int</span> tmp;</span><br><span class="line">			<span class="keyword">int</span> flag=<span class="number">1</span>;</span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;tmp);</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;i;j++)&#123;</span><br><span class="line">				<span class="keyword">if</span>( !<span class="built_in">strcmp</span>(prb[i].name,prb[j].name) )&#123;</span><br><span class="line">					prb[j].add(tmp);</span><br><span class="line">					prb[i].sum=<span class="number">0</span>;</span><br><span class="line">					flag=<span class="number">0</span>;</span><br><span class="line">					<span class="keyword">break</span>;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;		</span><br><span class="line">			<span class="keyword">if</span>(flag)</span><br><span class="line">				prb[i].add(tmp);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">int</span> ans=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">			ans+=prb[i].sum;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,ans);</span><br><span class="line">		<span class="built_in">memset</span>(prb,<span class="number">0</span>,<span class="keyword">sizeof</span>(prb));</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://fried-chicken.top/[object Object]/2018zj-f/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="fried-chicken">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="fried-chicken的blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/[object Object]/2018zj-f/" itemprop="url">F：Teammates and Red Envelopes</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-29T01:28:28+08:00">
+                2019-03-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/2018寒假算法总结赛/" itemprop="url" rel="index">
+                    <span itemprop="name">2018寒假算法总结赛</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/2018寒假算法总结赛/F：Teammates-and-Red-Envelopes/" itemprop="url" rel="index">
+                    <span itemprop="name">F：Teammates and Red Envelopes</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/[object Object]/2018zj-f/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="[object Object]/2018zj-f/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><strong> 赛时状态：<font color="green">AC</font>(+<font color="red">2</font>) at 2:30; </strong></p>
+<h1 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h1><p><img src="/[object Object]/2018zj-f/1.png" alt="1"><br><img src="/[object Object]/2018zj-f/2.png" alt="2"></p>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>算是我这场比赛在赛时做出来的最难的一道题了吧（虽然回过头来看也并不是很难orz）。</p>
+<p>题目的意思大概是，有这么两个人，想要很多红包，于是输入数据的前两个数为他们要的红包数。</p>
+<p>然后，你拥有从1~x的编号连续的红包，但这俩人有点挑剔，他们分别不要编号可以被P1、P2整除的红包。</p>
+<p>所以题目就是输入他俩各要几个红包以及上述P1、P2，求你需要准备的红包数x最小为多少。</p>
+<p>最自然的想法当然是从1开始分发红包，发到两个人都满足要求为止，但由于数据范围在1e9，这样显然会超时。</p>
+<p>所以，我们考虑二分本题的答案。</p>
+<p>现在，我们已经二分好了一个答案，如何判断它是否符合要求？</p>
+<p>请看程序中注释hhhh</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> N1,N2,P1,P2;</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> c,lft,rht;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"><span class="comment">//	freopen("team.in","r",stdin);</span></span><br><span class="line">	<span class="keyword">while</span>(~<span class="built_in">scanf</span>(<span class="string">"%lld%lld%lld%lld"</span>,&amp;N1,&amp;N2,&amp;P1,&amp;P2))&#123;		</span><br><span class="line">		lft=<span class="number">0</span>,rht=<span class="number">100000000000000</span>;		<span class="comment">//rht范围一定要开大大大大大！！！为此还WA了一发</span></span><br><span class="line">		<span class="keyword">while</span>(rht-lft&gt;<span class="number">1</span>)&#123;</span><br><span class="line">			c=(lft+rht)&gt;&gt;<span class="number">1</span>;	</span><br><span class="line">			<span class="keyword">long</span> <span class="keyword">long</span> div1=c/P1,div2=c/P2,div12=c/(P1*P2);	</span><br><span class="line">			<span class="keyword">int</span> j;</span><br><span class="line">			<span class="keyword">long</span> <span class="keyword">long</span> csave=c;</span><br><span class="line">			<span class="keyword">long</span> <span class="keyword">long</span> now1,now2;</span><br><span class="line">			<span class="keyword">if</span>(P1!=P2)&#123;</span><br><span class="line">				csave-=(div1+div2-div12);	</span><br><span class="line">				<span class="comment">//现在的csave是两个人都可以拿的红包</span></span><br><span class="line">				now1=div2-div12;now2=div1-div12;</span><br><span class="line">				<span class="comment">//now1表示第一个人可以拿而第二个人不能拿的红包数，now2同理</span></span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span>&#123;	<span class="comment">//特判P1==P2的情况</span></span><br><span class="line">				csave-=div1;</span><br><span class="line">				now1=<span class="number">0</span>;now2=<span class="number">0</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span>(now1&gt;N1)</span><br><span class="line">				now1=N1;	<span class="comment">//now1发给一号之后就没有了，因为不能发给二号</span></span><br><span class="line">			<span class="keyword">if</span>(now2&gt;N2)</span><br><span class="line">				now2=N2;		</span><br><span class="line">			<span class="keyword">if</span>(csave+now1+now2&gt;=N1+N2)&#123;	<span class="comment">//如果上述三部分加起来满足两人的要求，缩小答案上界</span></span><br><span class="line">				rht=c;</span><br><span class="line">				<span class="keyword">continue</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span>&#123;				<span class="comment">//否则，缩小下界</span></span><br><span class="line">				lft=c;</span><br><span class="line">				<span class="keyword">continue</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,rht);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://fried-chicken.top/[object Object]/2018zj-e/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -575,779 +1923,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://fried-chicken.top/[object Object]/2018zj/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="fried-chicken">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="fried-chicken的blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/[object Object]/2018zj/" itemprop="url">2018寒假算法总结赛总结</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-07T20:43:56+08:00">
-                2019-03-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/2018寒假算法总结赛/" itemprop="url" rel="index">
-                    <span itemprop="name">2018寒假算法总结赛</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/2018寒假算法总结赛/总结/" itemprop="url" rel="index">
-                    <span itemprop="name">总结</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/[object Object]/2018zj/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="[object Object]/2018zj/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="比赛情况"><a href="#比赛情况" class="headerlink" title="比赛情况"></a>比赛情况</h1><h2 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h2><table>
-<thead>
-<tr>
-<th>A</th>
-<th>B</th>
-<th>C</th>
-<th>D</th>
-<th>E</th>
-<th>F</th>
-<th>G</th>
-<th>H</th>
-<th>I</th>
-<th>J</th>
-<th>K</th>
-<th>L</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td></td>
-<td></td>
-<td><font color="blue">-5</font></td>
-<td><font color="green">65</font></td>
-<td><font color="green">19</font></td>
-<td><font color="green">150(-1)</font></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td><font color="green">37</font></td>
-<td></td>
-</tr>
-<tr>
-<td>2.3%</td>
-<td>2.3%</td>
-<td>0.0%</td>
-<td>31.8%</td>
-<td>97.7%</td>
-<td>13.6%</td>
-<td>4.5%</td>
-<td>43.2%</td>
-<td>2.3%</td>
-<td>6.8%</td>
-<td>90.9%</td>
-<td>9.1%</td>
-</tr>
-</tbody>
-</table>
-<p>（第三行是通过率，按人头数计算）<br><strong>solved 4 out of 12</strong></p>
-<h2 id="排名：-7-44"><a href="#排名：-7-44" class="headerlink" title="排名：   7/44"></a>排名：   7/44</h2><h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2><p>这场是大一下开学的第一次活动，学长们掏出了一套去年他们集训时做的题，而且引入了真实刺激的“学长数据”——赛时的榜单上可以看到去年的学长们在疯狂过题hhhhhhh。<br>感觉发挥还是ok的，水题都没有太花时间，而且没加罚时，排名也还ok，但是！选择了用最后的两个小时时间来写模拟（C题），我怕是真的石乐志了，最后没写出来，在绝望中结束了比赛ORZ，总之呢，其实也是有我图啊、线段树啊啥的看着就不想写的原因，最后选了个省脑子（其实也并不）的大模拟题来写，如果能重来，我选择做那道线段树水题（H）。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://fried-chicken.top/[object Object]/2018zj-c/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="fried-chicken">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="fried-chicken的blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/[object Object]/2018zj-c/" itemprop="url">C：命令行与文件系统</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-07T19:39:28+08:00">
-                2019-03-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/2018寒假算法总结赛/" itemprop="url" rel="index">
-                    <span itemprop="name">2018寒假算法总结赛</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/2018寒假算法总结赛/C：命令行与文件系统/" itemprop="url" rel="index">
-                    <span itemprop="name">C：命令行与文件系统</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/[object Object]/2018zj-c/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="[object Object]/2018zj-c/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><strong> 赛时状态：<font color="red">WA</font>(-5); </strong></p>
-<p><strong> 补题状态：<font color="green">AC</font>(+6); </strong></p>
-<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><h3 id="【问题描述】"><a href="#【问题描述】" class="headerlink" title="【问题描述】"></a>【问题描述】</h3><p>在没有图形用户界面（GUI）的年代，计算机上大都是运行一种被称为“DOS”的基 于文本的操作系统与计算机用户进行交互。随着计算机的发展，即使在图形化界面高度发 达的今天，几乎所有的现代操作系统也保留了与以往类似的一个基于字符的界面执行某些 高度特定化的内容，这个基于字符的界面在今天通常被称为命令行。在 Windows 操作系 统上，承载这个字符界面的程序便是广为人知的 cmd.exe；在 Linux 各大发行版上，承载 这个字符界面的程序有大名鼎鼎的 bash、x-term 等。</p>
-<p>在计算机系统中，硬盘上的文件系统是使用树结构进行组织的，我们不妨称这棵树为 文件系统树。在文件系统树上，一个叶子节点表示一个文件，一个内部节点（非叶子节点）表示一个文件夹（目录）。在 Linux 操作系统上，这棵文件系统树有且仅有一个根节 点，这个根节点代表一个目录，称为 Linux 文件系统的根目录；在 Windows 操作系统上， 这棵文件系统树有可能有多个根节点（因此整个文件系统实质上构成一个森林），根节点的 数量与硬盘分区数量相同。</p>
-<p>例如，在 Windows 操作系统上，假如硬盘上有两个分区：C: 和 D:，那么文件 C:\Windows\System32\cmd.exe 可以看作以 C:\文件夹所对应的节点为根的树上的一个叶子节点，其到根的路径上共有 System32 和 Windows 这两个文件夹节点，分别代表两个文件夹；在 Linux 操作系统上，文件路径：/usr/bin/python3 可以看作以 / 目 录所对应的节点为根节点的文件系统树上的一个叶子节点，其到根的路径上共有 bin 和 usr 这两个节点，分别代表两个目录。下图分别呈现了上述两个示例的可视化树表示，左图为 Windows 示例所对应的树形结构，右图为 Linux 示例所对应的树形结构。 </p>
-<p>在一个文件系统中，一个文件或目录的绝对路径定义为从文件系统树根节点到与这个 文件或文件夹对应的树节点的路径上的节点上的名称使用“\”（ Windows）或“/” （Linux）进行分隔后连接而成的字符串。例如，在上图所示的文件系统树上，cmd.exe 文 件的绝对路径即为 C:\Windows\System32\cmd.exe，python 文件的绝对路径为 /usr/bin/python。一个文件或目录与另一个目录的相对路径定义为从另外一个目录所对应的 节点到这个文件或目录所对应的节点的简单路径上的节点上的名称用“\”（ Windows）或 “/”（ Linux）进行分隔后连接而成的字符串。</p>
-<p><img src="/[object Object]/2018zj-c/1.png" alt="实例"></p>
-<p>例如，在上图所示的文件系统树上，cmd.exe文件相对于 Windows 目录的相对路径为 \System32\cmd.exe，python 文件相对于 bin 目录的 相对路径为 /python。另外，在相对路径中，允许使用 “.” 转义符代表当前目录，“..” 转义符代表当前目录的父目录。例如，假如有另一个文件 /usr/share/include/stdio.h，那么 这个文件相对于 /usr/bin 目录的相对路径即为 ../share/include/stdin.h。其中 .. 代表 bin 目录的父目录，即 usr 目录。 命令行界面都是基于文件系统的。命令行会记录当前的工作目录，命令行做出的所有 操作都是相对于这个工作目录进行的。在 Windows 命令行中，操作目录通常显示在提示符 前方，如下图所示： 在上图所示的命令行窗口中，C:\Windows\System32 便是这个命令行窗口的工作目录。</p>
-<p>现在，需要你编写一个程序，在一个 Linux 文件系统上模拟执行命令行程序中的一小 部分命令。具体地，你需要支持下列四个关于目录的命令的执行： </p>
-<ol>
-<li><p>cd 命令。cd 是 change directory 的缩写，该命令用于更改命令行当前的工作目 录。命令格式为：cd <directory>，其中<directory>为一个相对于当前工作目 录的相对路径或一个绝对路径，该命令表示将当前命令行的工作目录切换到 directory 所指示的目录； </directory></directory></p>
-</li>
-<li><p>mkdir 命令。mkdir 是 make directory 的缩写，该命令用于在当前目录下创建一个 新的目录。命令格式为：mkdir <name>，其中<name>为要创建的目录的名称。 </name></name></p>
-</li>
-<li><p>ls 命令。ls 命令是 list 的缩写，该命令用于打印当前目录中的子目录。命令格式 为：ls。 </p>
-</li>
-<li><p>rm 命令。rm 命令是 remove 的缩写，该命令用于删除一个目录。命令格式为： rm <name>，其中<name>为要删除的目录的名称。</name></name></p>
-</li>
-</ol>
-<p>初始时文件系统为空，即文件系统树上仅有一个根节点，文件系统上仅有一个根目 录。且命令行初始时工作目录为根目录。 </p>
-<h3 id="【输入】"><a href="#【输入】" class="headerlink" title="【输入】"></a>【输入】</h3><p>输入文件包含多组测试数据。请处理到输入文件结尾。 每组测试数据第一行为一个整数 q ，表示要执行的命令的数量； 随后 q 行，每行一个命令，命令格式如上文所述。<br>对于所有的测试数据，保证有 ∑q≤1000 保证每个路径的长度不超过 256 个字符。 数据保证当执行 rm 指令时，当前工作目录不会在待删除的目录下。 数据保证所有路径中不含空白字符。 若一个路径既能被解释为绝对路径也能被解释为相对路径，优先将其解释为绝对路 径；若该路径按照绝对路径进行解释时出现错误，再将该路径按照相对路径进行解释。 所有名称均区分大小写。 </p>
-<h3 id="【输出】"><a href="#【输出】" class="headerlink" title="【输出】"></a>【输出】</h3><p>对于输入中的每个命令，程序应按照如下规则给出输出： </p>
-<ol>
-<li><p>若<directory>表示的目录不存在，cd 命令应输出一行“cd: no such directory”（不输出引号）；否则 cd 命令应在一行上输出“cd: ”，然后输出 <directory>所对应的目录的绝对路径； </directory></directory></p>
-</li>
-<li><p>若当前目录下已经有一个名为<name>的目录，mkdir 命令应输出一行“mkdir: directory already exist”（不输出引号）；否则 mkdir 命令不应该产生任 何输出； </name></p>
-</li>
-<li><p>若当前目录下没有任何子目录，输出一行“ls: (empty directory)”；否则 ls 命令应在一行上按照字典序列出当前目录下的所有子目录名称，目录名称之间 使用空格进行分隔； </p>
-</li>
-<li><p>若当前目录下没有名为<name>的目录，rm 命令应输出一行“rm: no such directory”；否则 rm 命令不应产生任何输出。 若执行命令时发生错误，则应直接忽略该命令，输出错误信息后继续执行下一个命 令。例如，若执行 cd 命令时出现目标目录不存在错误，则应保持当前的工作目录不变，输 出一行错误信息，并继续执行下一个命令。 </name></p>
-</li>
-</ol>
-<h3 id="【样例输入】"><a href="#【样例输入】" class="headerlink" title="【样例输入】"></a>【样例输入】</h3><p>15<br>cd .<br>mkdir bitss<br>cd ./bitss<br>mkdir algorithm<br>mkdir contest<br>cd ..<br>mkdir icpc<br>cd icpc<br>mkdir 2018<br>cd bitss/algorithm<br>cd ../bitss<br>ls<br>cd /<br>ls<br>cd /icpc/2018/beijing/.. </p>
-<h3 id="【样例输出】"><a href="#【样例输出】" class="headerlink" title="【样例输出】"></a>【样例输出】</h3><p>cd: /<br>cd: /bitss<br>cd: /<br>cd: /icpc<br>cd: no such directory<br>cd: /bitss<br>algorithm contest<br>cd: /<br>bitss icpc<br>cd: no such directory </p>
-<h3 id="【样例解释】"><a href="#【样例解释】" class="headerlink" title="【样例解释】"></a>【样例解释】</h3><p>对于最后一条命令：cd /icpc/2018/beijing/..，由于 2018 目录下并没有名为 beijing 的子目录，因此 cd 命令报错。</p>
-<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>首先，这道题带给我最大的一个教训是：千万别开模拟题！看着能写出来也别开！我在大概190min时开的这道题，差20min左右的时候写完，然后疯狂提交疯狂WA，最后比赛结束的时候，其实成绩还是不错的，但是这道题真的真的很坏人心情啊！</p>
-<p>咳咳，总之，这题数据不大，用邻接矩阵是一个挺好的办法（虽然似乎有点蠢），注意仔细读题，例如相对路径不加反斜杠是不可以解释为绝对路径的，例如各种操作失败时的输出等等，还有就是之中各种变量的初始化和作用域一定要想清楚呐。</p>
-<p>哦对了，顺带一说，这题赛时疯狂WA的原因赛后找到了：<br>1、我在清空某char数组时写了memset( … , … , sizeof(<strong> char </strong>) ),是的，我写的是char的size；<br>2、没看见这题是多组样例输入，处理了一组我的程序就歇着了ORZ。</p>
-<h3 id="程序："><a href="#程序：" class="headerlink" title="程序："></a>程序：</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt; </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">cata</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="keyword">char</span> name[<span class="number">260</span>];</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">int</span> k = <span class="number">1</span>;	<span class="comment">//新cd的文件的index </span></span><br><span class="line"><span class="keyword">int</span> c = <span class="number">0</span>;	<span class="comment">//当前目录的index </span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">cata</span> <span class="title">a</span>[1010];</span></span><br><span class="line"><span class="keyword">bool</span>	g[<span class="number">1010</span>][<span class="number">1010</span>]; <span class="comment">//a[father][son]</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">cd</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">char</span> s[<span class="number">300</span>];</span><br><span class="line">	<span class="keyword">char</span> save[<span class="number">300</span>] = &#123; <span class="number">0</span> &#125;;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%s"</span>, s);</span><br><span class="line">	<span class="keyword">int</span> i, csave;</span><br><span class="line">	<span class="keyword">if</span> (s[<span class="number">0</span>] == <span class="string">'/'</span>) &#123;</span><br><span class="line">		csave = <span class="number">0</span>; i = <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		csave = c; i = <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (; s[i] != <span class="number">0</span>; ) &#123;</span><br><span class="line">		<span class="keyword">int</span> j = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> p = <span class="number">0</span>; p &lt;= <span class="number">296</span>; p++)</span><br><span class="line">			save[p] = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">while</span> (s[i] != <span class="string">'/'</span>&amp;&amp;s[i] != <span class="number">0</span>) &#123;</span><br><span class="line">			save[j] = s[i];</span><br><span class="line">			j++, i++;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (s[i] == <span class="string">'/'</span>)</span><br><span class="line">			i++;</span><br><span class="line">		<span class="keyword">if</span> (!<span class="built_in">strlen</span>(save))</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">if</span> (<span class="built_in">strlen</span>(save) == <span class="number">1</span> &amp;&amp; save[<span class="number">0</span>] == <span class="string">'.'</span>) &#123;</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">int</span> flag = <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">if</span> (<span class="built_in">strlen</span>(save) == <span class="number">2</span> &amp;&amp; save[<span class="number">0</span>] == <span class="string">'.'</span>&amp;&amp;save[<span class="number">1</span>] == <span class="string">'.'</span>) &#123;</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= <span class="number">1005</span>; i++) &#123;</span><br><span class="line">				<span class="keyword">if</span> (g[i][csave] == <span class="number">1</span>) &#123;</span><br><span class="line">					csave = i;</span><br><span class="line">					flag = <span class="number">0</span>;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span> (flag == <span class="number">0</span>)</span><br><span class="line">				<span class="keyword">continue</span>;</span><br><span class="line">			<span class="keyword">else</span> &#123;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">"cd: no such directory\n"</span>);</span><br><span class="line">				<span class="keyword">return</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">0</span>; k &lt;= <span class="number">1005</span>; k++) &#123;</span><br><span class="line">			<span class="keyword">if</span> (g[csave][k] == <span class="number">1</span> &amp;&amp; !<span class="built_in">strcmp</span>(a[k].name, save)) &#123;</span><br><span class="line">				csave = k;</span><br><span class="line">				flag = <span class="number">0</span>;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (flag) &#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"cd: no such directory\n"</span>);</span><br><span class="line">			<span class="keyword">return</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	c = csave;</span><br><span class="line">	<span class="keyword">int</span> x = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> where[<span class="number">1005</span>];</span><br><span class="line">	csave = c;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"cd: /"</span>);</span><br><span class="line">	<span class="keyword">while</span> (csave) &#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= <span class="number">1005</span>; i++) &#123;</span><br><span class="line">			<span class="keyword">if</span> (g[i][csave] == <span class="number">1</span>) &#123;</span><br><span class="line">				x++;</span><br><span class="line">				where[x] = csave;</span><br><span class="line">				csave = i;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> flag = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span> (; x &gt; <span class="number">0</span>; x--) &#123;</span><br><span class="line">		<span class="keyword">if</span> (flag) &#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"%s"</span>, a[where[x]].name);</span><br><span class="line">			flag = <span class="number">0</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"/%s"</span>, a[where[x]].name);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">putchar</span>(<span class="string">'\n'</span>);</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">mkdir</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">char</span> s[<span class="number">260</span>];</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%s"</span>, s);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= <span class="number">1005</span>; i++) &#123;</span><br><span class="line">		<span class="keyword">if</span> (g[c][i] == <span class="number">1</span> &amp;&amp; !<span class="built_in">strcmp</span>(s, a[i].name)) &#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"mkdir: directory already exist\n"</span>);</span><br><span class="line">			<span class="keyword">return</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">strcpy</span>(a[k].name, s);</span><br><span class="line">	g[c][k] = <span class="number">1</span>; k++;</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">ls</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> flag = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">int</span> j = <span class="number">0</span>;</span><br><span class="line">	<span class="built_in">string</span> tmp[<span class="number">1005</span>];</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= <span class="number">1005</span>; i++) &#123;</span><br><span class="line">		<span class="keyword">if</span> (g[c][i] == <span class="number">1</span>) &#123;</span><br><span class="line">			flag = <span class="number">0</span>;</span><br><span class="line">			tmp[j] = a[i].name;</span><br><span class="line">			j++;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	sort(tmp, tmp + j);</span><br><span class="line">	<span class="keyword">int</span> tmpflag = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; j; i++) &#123;</span><br><span class="line">		<span class="keyword">if</span> (tmpflag) &#123;</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; tmp[i];</span><br><span class="line">			tmpflag--;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="string">' '</span> &lt;&lt; tmp[i];</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (flag) &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"ls: (empty directory)"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">putchar</span>(<span class="string">'\n'</span>);</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">del</span><span class="params">(<span class="keyword">int</span> c, <span class="keyword">int</span> i)</span> </span>&#123;	<span class="comment">//c:当前目录index；i：被删的index </span></span><br><span class="line">	g[c][i] = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt;= <span class="number">1005</span>; j++) &#123;</span><br><span class="line">		<span class="keyword">if</span> (g[i][j]) &#123;</span><br><span class="line">			del(i, j);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">memset</span>(a[i].name, <span class="number">0</span>, <span class="keyword">sizeof</span>(a[i].name));</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">rm</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">char</span> s[<span class="number">260</span>];</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%s"</span>, s);</span><br><span class="line">	<span class="keyword">int</span> flag = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= <span class="number">1005</span>; i++) &#123;</span><br><span class="line">		<span class="keyword">if</span> (g[c][i] &amp;&amp; !<span class="built_in">strcmp</span>(s, a[i].name)) &#123;</span><br><span class="line">			del(c, i);</span><br><span class="line">			flag = <span class="number">0</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (flag)</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"rm: no such directory\n"</span>);</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	a[<span class="number">0</span>].name[<span class="number">0</span>] = <span class="string">'/'</span>;</span><br><span class="line">	<span class="keyword">int</span> n;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">char</span> cmd[<span class="number">10</span>];</span><br><span class="line">	<span class="keyword">while</span> (<span class="built_in">cin</span> &gt;&gt; n) &#123;</span><br><span class="line"></span><br><span class="line">		<span class="built_in">memset</span>(g, <span class="number">0</span>, <span class="keyword">sizeof</span>(g));</span><br><span class="line">		<span class="built_in">memset</span>(a, <span class="number">0</span>, <span class="keyword">sizeof</span>(a));</span><br><span class="line">		k = <span class="number">1</span>; c = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">while</span> (n--) &#123;</span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">"%s"</span>, cmd);</span><br><span class="line">			<span class="keyword">if</span> (!<span class="built_in">strcmp</span>(cmd, <span class="string">"cd"</span>)) &#123;</span><br><span class="line">				cd();</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span> (!<span class="built_in">strcmp</span>(cmd, <span class="string">"mkdir"</span>)) &#123;</span><br><span class="line">				mkdir();</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span> (!<span class="built_in">strcmp</span>(cmd, <span class="string">"ls"</span>)) &#123;</span><br><span class="line">				ls();</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span> (!<span class="built_in">strcmp</span>(cmd, <span class="string">"rm"</span>)) &#123;</span><br><span class="line">				rm();</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="built_in">memset</span>(cmd, <span class="number">0</span>, <span class="keyword">sizeof</span>(cmd));</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://fried-chicken.top/[object Object]/about/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="fried-chicken">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="fried-chicken的blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/[object Object]/about/" itemprop="url">关于这个博客的二三事</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-07T10:40:05+08:00">
-                2019-03-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/others/" itemprop="url" rel="index">
-                    <span itemprop="name">others</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/others/about/" itemprop="url" rel="index">
-                    <span itemprop="name">about</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/[object Object]/about/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="[object Object]/about/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="关于fried-chicken"><a href="#关于fried-chicken" class="headerlink" title="关于fried-chicken"></a>关于fried-chicken</h2><blockquote>
-<ul>
-<li>fried-chicken是北(he)京(bei)理工大学的18级学生</li>
-<li>fried-chicken误入了学校的ACM-ICPC俱乐部</li>
-<li>fried-chicken真的很菜，所以试图写个记录用的blog</li>
-<li>fried-chicken喜欢吃炸鸡</li>
-<li>所以尽管麦当劳的汉堡吊打肯德基的汉堡，fried-chicken还是会吃肯德基</li>
-<li>特别是<strong>吮指原味鸡</strong></li>
-</ul>
-</blockquote>
-<h2 id="关于这个blog"><a href="#关于这个blog" class="headerlink" title="关于这个blog"></a>关于这个blog</h2><blockquote>
-<ul>
-<li>会不定期（真·不定期）更新算法竞赛的一些题解或笔记</li>
-<li>因为我很菜，所以这个blog功能真的很不完善</li>
-<li>所以如果您需要什么功能时没有找到，不用担心，可能是因为这个功能确实不存在</li>
-<li>也欢迎大嘎关注我的<a href="https://www.zhihu.com/people/zha-zha-32-77/activities" target="_blank" rel="noopener">知乎账号</a></li>
-</ul>
-</blockquote>
-<h2 id="内容导读"><a href="#内容导读" class="headerlink" title="内容导读"></a>内容导读</h2><blockquote>
-<ul>
-<li>本着多开坑的原则，博主会采取先开坑会填坑的写法，所以您将经常看到未完成的内容</li>
-<li>您可以在分类栏中找到一些比赛分类，在每场比赛下，都有一个比赛概况的介绍，会大概写写那些题目被我<font color="green"><strong>AC</strong></font>了之类的</li>
-<li>大多数题目会提供（代码质量很低）的代码，像是这样的：</li>
-</ul>
-</blockquote>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"Hello , World!"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<ul>
-<li>再次强调，我贼菜，可能会有许多说错的地方，欢迎大家在知乎上私信喷我</li>
-</ul>
-</blockquote>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://fried-chicken.top/[object Object]/fried-chicken/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="fried-chicken">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="fried-chicken的blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/[object Object]/fried-chicken/" itemprop="url">炸鸡</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-06T19:51:55+08:00">
-                2019-03-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/others/" itemprop="url" rel="index">
-                    <span itemprop="name">others</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/others/test/" itemprop="url" rel="index">
-                    <span itemprop="name">test</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/[object Object]/fried-chicken/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="[object Object]/fried-chicken/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>把隔壁小孩馋哭了</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1395,7 +1975,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1406,7 +1986,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">25</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -1417,7 +1997,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
