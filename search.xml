@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>E：砝码与天平</title>
+      <link href="/%5Bobject%20Object%5D/Uznly-E/"/>
+      <url>/%5Bobject%20Object%5D/Uznly-E/</url>
+      
+        <content type="html"><![CDATA[<p><strong> 赛时状态：<font color="green">AC</font>(<font color="red">-1</font>) at 1:52; </strong></p><h1 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h1><p><img src="/[object Object]/Uznly-E/1.jpg" alt="1"></p><h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>这题还是蛮有意思的，别人似乎用的是进制转换来做的，但我并没有很理解他们的做法，所以来说说我的吧</p><p>考虑天平的两侧相当于是加减两种运算，我们以样例中w=3的情况为里，对于满足题意的m，可以表示为：</p><p><img src="/[object Object]/Uznly-E/2.png" alt="2"></p><p>可以看到，经过步步化简之后（看不懂化简过程可以考虑重修级数23333），我们发现一个满足题意的m和另一个满足题意的m’之间有关系，由于最后一个表达式中的第一项实际取值为-1、1、0三者之一，这种关系可以表述为：</p><p>如果m为一个满足题意的数，那么m、m+1、m-1中一定有一个是另一个满足题意的数m’的3倍（一般的，也就是w倍）</p><p>上述推导实际上指出了m之间的递推关系，那么按照套路，有了递推关系，加上一个递推起点就可以了，那么显然，我们可以选择1作为一个递推的起点。</p><p>对于给出的一个数字，要想判断它是否满足条件，只需看它能不能回推到1即可。</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> t;</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> tmp,w,m;</span><br><span class="line"><span class="keyword">bool</span> flag;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;t;</span><br><span class="line">    <span class="keyword">while</span>(t--)&#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%lld%lld"</span>,&amp;w,&amp;m);</span><br><span class="line">        flag=<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(m)&#123;</span><br><span class="line">            <span class="keyword">if</span>((m<span class="number">-1</span>)%w==<span class="number">0</span>)&#123;</span><br><span class="line">                m=(m<span class="number">-1</span>)/w;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>((m+<span class="number">1</span>)%w==<span class="number">0</span>)&#123;</span><br><span class="line">                m=(m+<span class="number">1</span>)/w;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">if</span>(m%w)&#123;</span><br><span class="line">                    <span class="built_in">printf</span>(<span class="string">"NO\n"</span>);</span><br><span class="line">                    flag=<span class="number">0</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span>&#123;</span><br><span class="line">                    m/=w;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(flag)&#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"YES\n"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 2019中南林业科技大学校赛 </category>
+          
+          <category> E：砝码与天平 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 数学 </tag>
+            
+            <tag> 思维 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>B：兑换零钱</title>
       <link href="/%5Bobject%20Object%5D/Uznly-B/"/>
       <url>/%5Bobject%20Object%5D/Uznly-B/</url>
@@ -31,65 +60,7 @@
     
     
     <entry>
-      <title>A：链表的合并</title>
-      <link href="/%5Bobject%20Object%5D/Uznly-A/"/>
-      <url>/%5Bobject%20Object%5D/Uznly-A/</url>
-      
-        <content type="html"><![CDATA[<p><strong> 赛时状态：<font color="green">AC</font>(+<font color="red"></font>) at 0:16; </strong></p><h1 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h1><p><img src="/[object Object]/Uznly-A/1.jpg" alt="1"></p><h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>这是什么鬼题啊hhhhh</p><p>出题人不知道评测机不具备识别链表的功能的🐎</p><p>还是说这就是出题人的意图？</p><p>emmmmm不管了，反正随便排个序就AC了，下一个</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">int</span> a[<span class="number">100</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">30</span>;i++)&#123;</span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;a[i];</span><br><span class="line">    &#125;</span><br><span class="line">    sort(a+<span class="number">1</span>,a+<span class="number">31</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">30</span>;i++)&#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;a[i];</span><br><span class="line">        <span class="keyword">if</span>(i!=<span class="number">30</span>)</span><br><span class="line">            <span class="built_in">putchar</span>(<span class="string">' '</span>);</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="built_in">putchar</span>(<span class="string">'\n'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      
-      
-      <categories>
-          
-          <category> 2019中南林业科技大学校赛 </category>
-          
-          <category> A：链表的合并 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 水题 </tag>
-            
-            <tag> 排序 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>A：链表的合并</title>
-      <link href="/%5Bobject%20Object%5D/Uznly-E/"/>
-      <url>/%5Bobject%20Object%5D/Uznly-E/</url>
-      
-        <content type="html"><![CDATA[<p><strong> 赛时状态：<font color="green">AC</font>(+<font color="red"></font>) at 0:16; </strong></p><h1 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h1><p><img src="/[object Object]/Uznly-E/1.jpg" alt="1"></p><h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>这题还是蛮有意思的，别人似乎用的是进制转换来做的，但我并没有很理解他们的做法，所以来说说我的吧</p><p>考虑天平的两侧相当于是加减两种运算，我们以样例中w=3的情况为里，对于满足题意的m，可以表示为：</p><p><img src="/[object Object]/Uznly-E/2.png" alt="2"></p><p>可以看到，经过步步化简之后（看不懂化简过程可以考虑重修级数23333），我们发现一个满足题意的m和另一个满足题意的m’之间有关系，由于最后一个表达式中的第一项实际取值为-1、1、0三者之一，这种关系可以表述为：</p><p>如果m为一个满足题意的数，那么m、m+1、m-1中一定有一个是另一个满足题意的数m’的3倍（一般的，也就是w倍）</p><p>上述推导实际上指出了m之间的递推关系，那么按照套路，有了递推关系，加上一个递推起点就可以了，那么显然，我们可以选择1作为一个递推的起点。</p><p>对于给出的一个数字，要想判断它是否满足条件，只需看它能不能回推到1即可。</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> t;</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> tmp,w,m;</span><br><span class="line"><span class="keyword">bool</span> flag;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;t;</span><br><span class="line">    <span class="keyword">while</span>(t--)&#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%lld%lld"</span>,&amp;w,&amp;m);</span><br><span class="line">        flag=<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(m)&#123;</span><br><span class="line">            <span class="keyword">if</span>((m<span class="number">-1</span>)%w==<span class="number">0</span>)&#123;</span><br><span class="line">                m=(m<span class="number">-1</span>)/w;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>((m+<span class="number">1</span>)%w==<span class="number">0</span>)&#123;</span><br><span class="line">                m=(m+<span class="number">1</span>)/w;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">if</span>(m%w)&#123;</span><br><span class="line">                    <span class="built_in">printf</span>(<span class="string">"NO\n"</span>);</span><br><span class="line">                    flag=<span class="number">0</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span>&#123;</span><br><span class="line">                    m/=w;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(flag)&#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"YES\n"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      
-      
-      <categories>
-          
-          <category> 2019中南林业科技大学校赛 </category>
-          
-          <category> A：链表的合并 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 水题 </tag>
-            
-            <tag> 排序 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>D:最大的湖</title>
+      <title>D：最大的湖</title>
       <link href="/%5Bobject%20Object%5D/Uznly-D/"/>
       <url>/%5Bobject%20Object%5D/Uznly-D/</url>
       
@@ -100,7 +71,7 @@
           
           <category> 2019中南林业科技大学校赛 </category>
           
-          <category> D:最大的湖 </category>
+          <category> D：最大的湖 </category>
           
       </categories>
       
@@ -139,6 +110,35 @@
             <tag> 模拟 </tag>
             
             <tag> 大数 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>A：链表的合并</title>
+      <link href="/%5Bobject%20Object%5D/Uznly-A/"/>
+      <url>/%5Bobject%20Object%5D/Uznly-A/</url>
+      
+        <content type="html"><![CDATA[<p><strong> 赛时状态：<font color="green">AC</font>(+<font color="red"></font>) at 0:16; </strong></p><h1 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h1><p><img src="/[object Object]/Uznly-A/1.jpg" alt="1"></p><h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>这是什么鬼题啊hhhhh</p><p>出题人不知道评测机不具备识别链表的功能的🐎</p><p>还是说这就是出题人的意图？</p><p>emmmmm不管了，反正随便排个序就AC了，下一个</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">int</span> a[<span class="number">100</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">30</span>;i++)&#123;</span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;a[i];</span><br><span class="line">    &#125;</span><br><span class="line">    sort(a+<span class="number">1</span>,a+<span class="number">31</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">30</span>;i++)&#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;a[i];</span><br><span class="line">        <span class="keyword">if</span>(i!=<span class="number">30</span>)</span><br><span class="line">            <span class="built_in">putchar</span>(<span class="string">' '</span>);</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="built_in">putchar</span>(<span class="string">'\n'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 2019中南林业科技大学校赛 </category>
+          
+          <category> A：链表的合并 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 水题 </tag>
+            
+            <tag> 排序 </tag>
             
         </tags>
       
@@ -278,9 +278,9 @@
       
         <tags>
             
-            <tag> dp </tag>
-            
             <tag> 二分 </tag>
+            
+            <tag> dp </tag>
             
         </tags>
       
